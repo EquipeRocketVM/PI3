@@ -23,10 +23,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author victor.gsgalvao
- */
+
 @WebServlet(name = "AtualizarCarro", urlPatterns = {"/AtualizarCarro"})
 public class AtualizarCarroServlet extends HttpServlet {
 

@@ -8,10 +8,7 @@ package LocadoraVeiculos;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-/**
- *
- * @author victor.galvao
- */
+
 public class Plano {
     
     private int idplano;

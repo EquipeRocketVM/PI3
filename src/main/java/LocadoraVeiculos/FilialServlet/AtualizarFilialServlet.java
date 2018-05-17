@@ -17,10 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author victor.gsgalvao
- */
+
 @WebServlet(name = "AtualizarFilial", urlPatterns = {"/AtualizarFilial"})
 public class AtualizarFilialServlet extends HttpServlet {
 
@@ -123,7 +120,7 @@ public class AtualizarFilialServlet extends HttpServlet {
                 request.setAttribute("pessoaUpdate", p1);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/Filial/resultadoDelete.jsp");
                 dispatcher.forward(request, response);
-                System.out.println("ENTROU NO DELETAr");
+                System.out.println("ENTROU NO DELETAR");
             }
 
         } catch (Exception e) {

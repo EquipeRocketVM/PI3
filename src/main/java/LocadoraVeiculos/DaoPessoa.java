@@ -14,10 +14,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author victor.galvao
- */
 public class DaoPessoa {
 
     public Connection obterConexao() throws ClassNotFoundException, SQLException {
@@ -34,7 +30,8 @@ public class DaoPessoa {
             conn.setAutoCommit(false);
             try (PreparedStatement stmt
                     = conn.prepareStatement(
-                            " INSERT INTO locadora.Pessoa (nome, sobrenome, rua, numero, cep, estado, cidade, cpf, dtnascimento, email, telefone, tipo, idstatus)"
+                            " INSERT INTO locadora.Pessoa (nome, sobrenome, rua, numero,"
+                            + " cep, estado, cidade, cpf, dtnascimento, email, telefone, tipo, idstatus)"
                             + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) ")) {
 
                 stmt.setString(1, p.getNome());
@@ -103,7 +100,8 @@ public class DaoPessoa {
 
             try (PreparedStatement stmt
                     = conn.prepareStatement(
-                            "INSERT INTO locadora.PessoaFuncionario (id_pessoa, id_nivel, id_cargo, login, senha, idstatus) "
+                            "INSERT INTO locadora.PessoaFuncionario (id_pessoa, id_nivel,"
+                            + " id_cargo, login, senha, idstatus) "
                             + "VALUES (?,?,?,?,?,?) ")) {
 
                 stmt.setInt(1, p.getId());
@@ -184,7 +182,7 @@ public class DaoPessoa {
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
                         " SELECT idpessoa,  nome, sobrenome, rua, numero, cep, estado, cidade, cpf, "
-                                + "dtnascimento, email, telefone, b.id_nivel, nivel, b.id_cargo, cargo, login, senha  "
+                        + "dtnascimento, email, telefone, b.id_nivel, nivel, b.id_cargo, cargo, login, senha  "
                         + " FROM locadora.Pessoa a inner join locadora.PessoaFuncionario b on a.idpessoa = b.id_pessoa "
                         + " inner join locadora.Nivel c on b.id_nivel = c.id_nivel "
                         + " inner join locadora.Cargo d on b.id_cargo = d.id_cargo "
@@ -239,7 +237,7 @@ public class DaoPessoa {
 
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-            System.out.println("DEU MERDAAA ");
+            System.out.println(" Tente novamente, por favor. ");
         } catch (ClassNotFoundException ex) {
             System.err.println(ex.getMessage());
         }
@@ -280,7 +278,7 @@ public class DaoPessoa {
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
                         "SELECT idpessoa, id_cliente, nome, sobrenome, "
-                                + "rua, numero, cep, estado, cidade, cpf, dtnascimento, email, telefone, cnh, renda "
+                        + "rua, numero, cep, estado, cidade, cpf, dtnascimento, email, telefone, cnh, renda "
                         + " FROM locadora.Pessoa a inner join locadora.PessoaCliente b on a.idpessoa = b.id_pessoa "
                         + " where idstatus = 1 and tipo = 1");
                 ResultSet resultados = stmt.executeQuery()) {
@@ -335,7 +333,8 @@ public class DaoPessoa {
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
                         " SELECT idpessoa,  nome, sobrenome, rua, numero, cep, estado, cidade, "
-                                + "cpf, dtnascimento, email, telefone, b.id_nivel, b.id_cargo, login, senha, nivel, d.cargo   "
+                        + "cpf, dtnascimento, email, telefone, b.id_nivel, b.id_cargo, "
+                        + "login, senha, nivel, d.cargo   "
                         + " FROM locadora.Pessoa a inner join locadora.PessoaFuncionario b on a.idpessoa = b.id_pessoa "
                         + " inner join locadora.Nivel c on b.id_nivel = c.id_nivel "
                         + " inner join locadora.Cargo d on b.id_cargo = d.id_cargo "
@@ -499,7 +498,7 @@ public class DaoPessoa {
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
                         " SELECT idpessoa,  nome, sobrenome, rua, numero, cep, estado, cidade, cpf,"
-                                + " dtnascimento, email, telefone, b.id_nivel, nivel, b.id_cargo, cargo, login, senha  "
+                        + " dtnascimento, email, telefone, b.id_nivel, nivel, b.id_cargo, cargo, login, senha  "
                         + " FROM locadora.Pessoa a inner join locadora.PessoaFuncionario b on a.idpessoa = b.id_pessoa "
                         + " inner join locadora.Nivel c on b.id_nivel = c.id_nivel "
                         + " inner join locadora.Cargo d on b.id_cargo = d.id_cargo "

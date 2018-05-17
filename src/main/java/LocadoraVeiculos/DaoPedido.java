@@ -14,11 +14,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- *
- * @author guilherme.rocha
- */
 public class DaoPedido {
+
     private Connection obterConexao() throws ClassNotFoundException, SQLException {
         // 1A) Declarar o driver JDBC de acordo com o Banco de dados usado
         Class.forName("com.mysql.jdbc.Driver");
@@ -27,14 +24,15 @@ public class DaoPedido {
                 "jdbc:mysql://localhost:3306/locadora", "root", "");
         return conn;
     }
-    
+
     public List<Pedido> listar() throws ClassNotFoundException, SQLException {
 
         List<Pedido> lista = new ArrayList<Pedido>();
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        " SELECT p.id_pedido, cl.id_cliente, pl.id_plano, ca.id_carro, pf.id_funcionario, f.id_filial "
+                        " SELECT p.id_pedido, cl.id_cliente, pl.id_plano, ca.id_carro, pf.id_funcionario, "
+                        + "f.id_filial "
                         + "p.dtlocacao, p.dtdevolucao, p.dias_alugados, p.ped_status,  p.vlr_total "
                         + "FROM locadora.PEDIDO P "
                         + " INNER JOIN locadora.CLIENTE CL ON P.ID_CLIENTE = CL.ID_CLIENTE "
@@ -73,7 +71,7 @@ public class DaoPedido {
 
                 lista.add(p);
 
-                System.out.println("Inseriu na lista!!!");
+                System.out.println("Inserido na lista!!!");
             }
         }
         return lista;
@@ -87,7 +85,8 @@ public class DaoPedido {
 
             try (PreparedStatement stmt
                     = conn.prepareStatement(
-                            " INSERT INTO locadora.Pedido (id_pedido, id_cliente, id_plano, id_carro, id_funcionario, id_filial"
+                            " INSERT INTO locadora.Pedido (id_pedido, id_cliente, id_plano,"
+                            + " id_carro, id_funcionario, id_filial"
                             + "dtlocacao, dtdevolucao, dias_alugados, ped_status,  vlr_total) "
                             + "VALUES (?,?,?,?,?,?,?,?,?,?,?) ")) {
                 stmt.setLong(1, p.getId());
@@ -138,7 +137,7 @@ public class DaoPedido {
             System.err.println(ex.getMessage());
         }
     }
-    
+
     public boolean excluir(int id) throws ClassNotFoundException, SQLException {
 
         boolean deletado = false;
@@ -146,7 +145,7 @@ public class DaoPedido {
                 PreparedStatement stmt = conn.prepareStatement(
                         "DELETE locadora.Pedido  WHERE id_pedido = ? ")) {
             stmt.setInt(1, id);
-            
+
             stmt.executeUpdate();
             deletado = true;
             conn.close();
@@ -157,14 +156,15 @@ public class DaoPedido {
         }
         return deletado;
     }
-    
+
     public Pedido select(int id) throws ClassNotFoundException, SQLException {
-        
+
         Pedido p = new Pedido();
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "SELECT p.id_pedido, cl.id_cliente, pl.id_plano, ca.id_carro, pf.id_funcionario, f.id_filial"
+                        "SELECT p.id_pedido, cl.id_cliente, pl.id_plano, ca.id_carro,"
+                        + " pf.id_funcionario, f.id_filial"
                         + "p.dtlocacao, p.dtdevolucao, p.dias_alugados, p.ped_status,  p.vlr_total"
                         + "FROM locadora.PEDIDO P"
                         + "INNER JOIN locadora.CLIENTE CL ON P.ID_CLIENTE = CL.ID_CLIENTE"
@@ -173,9 +173,9 @@ public class DaoPedido {
                         + "INNER JOIN locadora.PESSOAFUNCIONARIO PF ON P.ID_FUNCIONARIO = PF.ID_FUNCIONARIO"
                         + "INNER JOIN locadora.FILIAL F ON P.ID_FILIAL = F.ID_FILIAL");
                 ResultSet resultados = stmt.executeQuery()) {
-            
-                while (resultados.next()) {
-                
+
+            while (resultados.next()) {
+
                 int Id = resultados.getInt("id_pedido");
                 int IdPessoa = resultados.getInt("id_cliente");
                 int IdPlano = resultados.getInt("id_plano");
@@ -186,9 +186,9 @@ public class DaoPedido {
                 int DiasAlugados = resultados.getInt("dias_alugados");
                 String Status = resultados.getString("ped_status");
                 double ValorTotal = resultados.getDouble("vlr_total");
-                
+
                 System.out.println("Id do pedido: " + Id);
-                
+
                 p.setId(Id);
                 p.setIdPessoa(IdPessoa);
                 p.setIdPlano(IdPlano);
@@ -198,11 +198,10 @@ public class DaoPedido {
                 p.setDataDevolucao(DataDevolucao);
                 p.setDiasAlugados(DiasAlugados);
                 p.setStatus(Status);
-                p.setValorTotal(ValorTotal);                   
-                
-                }
+                p.setValorTotal(ValorTotal);
+
+            }
             conn.close();
-            
 
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -211,6 +210,5 @@ public class DaoPedido {
         }
         return p;
     }
-    
-    
+
 }

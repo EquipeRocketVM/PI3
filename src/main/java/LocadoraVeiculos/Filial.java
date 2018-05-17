@@ -8,10 +8,7 @@ package LocadoraVeiculos;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-/**
- *
- * @author fernando.tsuda
- */
+
 public class Filial {
     
     private int id;

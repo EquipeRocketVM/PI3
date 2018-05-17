@@ -17,10 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author victor.gsgalvao
- */
+
 @WebServlet(name = "BuscarFuncionarioServlet", urlPatterns = {"/buscar-funcionario"})
 public class BuscarFuncionarioServlet extends HttpServlet {
 
@@ -51,11 +48,8 @@ public class BuscarFuncionarioServlet extends HttpServlet {
 
         try {
 
-//            System.out.println("id cliente é: " + id);
             pessoa = con.selectFuncionario(id);
-//            System.out.println("Nome é: " + pessoa.getNome());
-//            System.out.println("Id nivel é: " + pessoa.getIdcargo());
-//            System.out.println("Id cargo é: " + pessoa.getIdnivel());
+
         } catch (Exception e) {
 
         }

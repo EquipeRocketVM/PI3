@@ -23,10 +23,6 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author fernando.tsuda
- */
 public class ControllerPlano {
 
     private Connection obterConexao() throws ClassNotFoundException, SQLException {
@@ -34,7 +30,7 @@ public class ControllerPlano {
         Class.forName("com.mysql.jdbc.Driver");
 
         Connection conn = DriverManager.getConnection(
-                 "jdbc:mysql://localhost:3306/locadora", "planejamento", "ccash01");
+                "jdbc:mysql://localhost:3306/locadora", "root", "");
         return conn;
     }
 
@@ -45,20 +41,20 @@ public class ControllerPlano {
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
                         "SELECT a.id_plano, a.ds_plano, b.id_classificacao, b.ds_classificacao, a.valor "
-                                + " FROM test.Plano a "
-                                + " inner join test.Classificacao b on a.id_class_carro = b.id_classificacao "
-                                + " where a.id_status = 1 ");
+                        + " FROM locadora.Plano a "
+                        + " inner join locadora.Classificacao b on a.id_class_carro = b.id_classificacao "
+                        + " where a.id_status = 1 ");
                 ResultSet resultados = stmt.executeQuery()) {
-            
+
             System.out.println("retornou consulta");
-            
+
             while (resultados.next()) {
                 int id_plano = resultados.getInt("id_plano");
                 String ds_plano = resultados.getString("ds_plano");
                 int id_classificao = resultados.getInt("id_classificacao");
                 String ds_classificao = resultados.getString("ds_classificacao");
                 double valor = resultados.getDouble("valor");
-                
+
                 Plano p = new Plano();
 
                 p.setIdplano(id_plano);
@@ -66,9 +62,9 @@ public class ControllerPlano {
                 p.setPlano(ds_plano);
                 p.setClassificacao(ds_classificao);
                 p.setValor(valor);
-                
+
                 lista.add(p);
-                
+
                 System.out.println(id_plano + ", " + ds_plano);
             }
         }
@@ -79,18 +75,18 @@ public class ControllerPlano {
 
         try (Connection conn = obterConexao()) {
             conn.setAutoCommit(false);
-            
+
             System.out.println(p.getIdclassificacao() + " classificao é: ");
-            
+
             try (PreparedStatement stmt
                     = conn.prepareStatement(
-                            " INSERT INTO test.Plano (ds_plano, id_class_carro, valor, id_status) VALUES (?,?,?,?) ")) {
+                            " INSERT INTO locadora.Plano (ds_plano, id_class_carro, "
+                            + "valor, id_status) VALUES (?,?,?,?) ")) {
                 stmt.setString(1, p.getPlano());
                 stmt.setInt(2, p.getIdclassificacao());
                 stmt.setDouble(3, p.getValor());
                 stmt.setInt(4, 1);
-                
-                
+
                 int status = stmt.executeUpdate();
 
                 // Efetivar todas as operações no BD
@@ -117,9 +113,9 @@ public class ControllerPlano {
             stmt.setDouble(3, P.getValor());
             stmt.setInt(4, P.getIdplano());
             stmt.executeUpdate();
-            
+
             conn.close();
-            
+
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         } catch (ClassNotFoundException ex) {
@@ -133,7 +129,7 @@ public class ControllerPlano {
         boolean deletado = false;
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "update test.Plano set id_status = 0 WHERE id_plano = ? ")) {
+                        "update locadora.Plano set id_status = 0 WHERE id_plano = ? ")) {
             stmt.setInt(1, id);
             stmt.executeUpdate();
             deletado = true;
@@ -147,34 +143,34 @@ public class ControllerPlano {
     }
 
     public Plano select(int id) throws ClassNotFoundException, SQLException {
-        
+
         Plano plano = new Plano();
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
                         "SELECT a.id_plano, a.ds_plano, b.id_classificacao, b.ds_classificacao, a.valor "
-                                + " FROM test.Plano a inner join test.Classificacao b "
-                                + " on a.id_class_carro = b.id_classificacao "
-                                + " WHERE a.id_status = 1 and a.id_plano = " + id);
+                        + " FROM locadora.Plano a inner join locadora.Classificacao b "
+                        + " on a.id_class_carro = b.id_classificacao "
+                        + " WHERE a.id_status = 1 and a.id_plano = " + id);
                 ResultSet resultados = stmt.executeQuery()) {
-            
-                while (resultados.next()) {
+
+            while (resultados.next()) {
 
                 int idplano = resultados.getInt("id_plano");
                 String ds_plano = resultados.getString("ds_plano");
                 int idclassificao = resultados.getInt("id_classificacao");
                 String ds_classificao = resultados.getString("ds_classificacao");
                 double valor = resultados.getInt("valor");
-                
-                System.out.println("O nome do plano no select é: " + ds_plano);
-                
+
+                System.out.println("O nome do plano é: " + ds_plano);
+
                 plano.setIdplano(idplano);
                 plano.setPlano(ds_plano);
                 plano.setIdclassificacao(idclassificao);
                 plano.setClassificacao(ds_classificao);
-                plano.setValor(valor);                    
-                
-                }
+                plano.setValor(valor);
+
+            }
             conn.close();
 
         } catch (SQLException ex) {

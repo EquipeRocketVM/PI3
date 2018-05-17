@@ -13,40 +13,35 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author victor.galvao
- */
 public class DaoCarro {
-    
-        private Connection obterConexao() throws ClassNotFoundException, SQLException {
+
+    private Connection obterConexao() throws ClassNotFoundException, SQLException {
         // 1A) Declarar o driver JDBC de acordo com o Banco de dados usado
         Class.forName("com.mysql.jdbc.Driver");
 
         Connection conn = DriverManager.getConnection(
-                 "jdbc:mysql://localhost:3306/locadora", "root", "");
+                "jdbc:mysql://localhost:3306/locadora", "root", "");
         return conn;
     }
-    
+
     public void incluir(Carro p) throws ClassNotFoundException, SQLException {
 
-  
         try (Connection conn = obterConexao()) {
             conn.setAutoCommit(false);
 
             try (PreparedStatement stmt
                     = conn.prepareStatement(
-                            "INSERT INTO locadora.Carro (ds_carro, fabricante, cor, ano, valor, id_classificacao, id_status) VALUES (?,?,?,?,?,?,?)")) {
+                            "INSERT INTO locadora.Carro (ds_carro, fabricante, cor, ano,"
+                            + " valor, id_classificacao, id_status) VALUES (?,?,?,?,?,?,?)")) {
                 stmt.setString(1, p.getCarro());
                 stmt.setString(2, p.getFabricante());
                 stmt.setString(3, p.getCor());
                 stmt.setInt(4, p.getAno());
-                 stmt.setDouble(5, p.getValor());
+                stmt.setDouble(5, p.getValor());
                 stmt.setInt(6, p.getIdclassificacao());
-                stmt.setInt(7,1);
+                stmt.setInt(7, 1);
 
                 int status = stmt.executeUpdate();
-              
 
                 // Efetivar todas as operações no BD
                 conn.commit();
@@ -59,7 +54,7 @@ public class DaoCarro {
         }
 
     }
-    
+
     public Carro select(int id) throws ClassNotFoundException, SQLException {
 
         Carro carro = new Carro();
@@ -96,18 +91,20 @@ public class DaoCarro {
         }
         return carro;
     }
-    
-     public List<Carro> listar() throws ClassNotFoundException, SQLException {
+
+    public List<Carro> listar() throws ClassNotFoundException, SQLException {
 
         List<Carro> lista = new ArrayList<Carro>();
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "SELECT id_carro, ds_carro, fabricante, cor, ano, valor, ds_classificacao, b.id_classificacao "
-                                + " FROM locadora.Carro a inner join locadora.Classificacao b on a.id_classificacao = b.id_classificacao "
-                                + " where id_status = 1");
+                        "SELECT id_carro, ds_carro, fabricante, cor, ano, valor, ds_classificacao, "
+                        + "b.id_classificacao "
+                        + " FROM locadora.Carro a inner join locadora.Classificacao b on "
+                        + "a.id_classificacao = b.id_classificacao "
+                        + " where id_status = 1");
                 ResultSet resultados = stmt.executeQuery()) {
-            
+
             while (resultados.next()) {
                 int id = resultados.getInt("id_carro");
                 String carro = resultados.getString("ds_carro");
@@ -130,22 +127,23 @@ public class DaoCarro {
                 p.setIdclassificacao(idclassificacao);
 
                 lista.add(p);
-                
+
             }
         }
         return lista;
     }
-     
-     public void atualizar(Carro P) throws ClassNotFoundException, SQLException {
+
+    public void atualizar(Carro P) throws ClassNotFoundException, SQLException {
         try {
-        
-        System.out.println("METODO UPDATE");   
-        System.out.println(P.getCarro() + " esse é o valor classificacao");
-        System.out.println(P.getAno() + " esse é o valor classificacao");
-        System.out.println(P.getClassificacao() + " esse é o valor carro");
-        System.out.println(P.getCor() + " esse é o valor carro");
-        System.out.println(P.getFabricante() + " esse é o valor carro");
-        System.out.println(P.getIdcarro() + " esse é o ID");
+
+            System.out.println("METODO UPDATE");
+            System.out.println(P.getCarro() + " esse é o Carro");
+            System.out.println(P.getAno() + " esse é o ano do carro");
+            System.out.println(P.getClassificacao() + " esse é a classificação do carro");
+            System.out.println(P.getValor()+ " esse é o valor do carro");
+            System.out.println(P.getCor() + " esse é a cor do carro");
+            System.out.println(P.getFabricante() + " esse é o fabricante carro");
+            System.out.println(P.getIdcarro() + " esse é o ID");
 
             Connection conn = obterConexao();
             PreparedStatement stmt = conn.prepareStatement(" UPDATE Carro SET "
@@ -159,9 +157,9 @@ public class DaoCarro {
             stmt.setInt(6, P.getIdclassificacao());
             stmt.setInt(7, P.getIdcarro());
             stmt.executeUpdate();
-            
+
             conn.close();
-            
+
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         } catch (ClassNotFoundException ex) {
@@ -169,13 +167,13 @@ public class DaoCarro {
         }
 
     }
-     
-     public boolean excluir(int id) throws ClassNotFoundException, SQLException {
+
+    public boolean excluir(int id) throws ClassNotFoundException, SQLException {
 
         boolean deletado = false;
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "update test.Carro set id_status = 0 WHERE id_carro = ? ")) {
+                        "update locadora.Carro set id_status = 0 WHERE id_carro = ? ")) {
             stmt.setInt(1, id);
             stmt.executeUpdate();
             deletado = true;
@@ -188,5 +186,3 @@ public class DaoCarro {
         return deletado;
     }
 }
-
-

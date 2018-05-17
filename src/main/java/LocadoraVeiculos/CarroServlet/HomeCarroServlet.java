@@ -14,10 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author victor.galvao
- */
+
 @WebServlet(name = "HomeCarroServlet", urlPatterns = {"/HomeCarroServlet"})
 public class HomeCarroServlet extends HttpServlet {
 

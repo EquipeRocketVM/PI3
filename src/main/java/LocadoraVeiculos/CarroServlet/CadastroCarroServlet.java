@@ -18,10 +18,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author fernando.tsuda
- */
 @WebServlet(name = "CadastroCarroServlet", urlPatterns = {"/cadastro-carro"})
 public class CadastroCarroServlet extends HttpServlet {
 
@@ -58,7 +54,7 @@ public class CadastroCarroServlet extends HttpServlet {
 
         try {
             con.incluir(p1);
-            System.out.println("Carro add " + p1.getCarro());
+            System.out.println("Carro adicionado! " + p1.getCarro());
         } catch (Exception e) {
 
         }

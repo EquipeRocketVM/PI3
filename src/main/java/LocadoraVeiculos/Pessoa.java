@@ -7,10 +7,6 @@ package LocadoraVeiculos;
 
 import java.sql.Date;
 
-/**
- *
- * @author victor.galvao
- */
 public class Pessoa {
 
     private int id;
@@ -36,12 +32,13 @@ public class Pessoa {
     private String senha;
     private String Cargo;
     private int idcargo;
-    
+
     public Pessoa() {
 
     }
 
-    public Pessoa(String nome, String sobrenome, String rua, int numero, int cep, String estado, String cidade, int cpf, Date dtnascimento, 
+    public Pessoa(String nome, String sobrenome, String rua, int numero, int cep, String estado,
+            String cidade, int cpf, Date dtnascimento,
             String email, int telefone, int tipo) {
 
         this.nome = nome;
@@ -384,7 +381,5 @@ public class Pessoa {
     public void setIdcargo(int idcargo) {
         this.idcargo = idcargo;
     }
-
-   
 
 }

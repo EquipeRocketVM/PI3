@@ -13,10 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Iago
- */
+
 @WebServlet(name = "SairServlet", urlPatterns = {"/Sair"})
 public class Sair extends HttpServlet {
 

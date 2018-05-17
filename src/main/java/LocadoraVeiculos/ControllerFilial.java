@@ -23,10 +23,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author fernando.tsuda
- */
+
 public class ControllerFilial {
 
     private Connection obterConexao() throws ClassNotFoundException, SQLException {
@@ -34,7 +31,7 @@ public class ControllerFilial {
         Class.forName("com.mysql.jdbc.Driver");
 
         Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/locadora", "planejamento", "ccash01");
+               "jdbc:mysql://localhost:3306/locadora", "root", "");
         return conn;
     }
 
@@ -44,7 +41,7 @@ public class ControllerFilial {
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "SELECT Id, NomeUnidade, Rua, Numero, Cep, Telefone, Gerente FROM test.Filial");
+                        "SELECT Id, NomeUnidade, Rua, Numero, Cep, Telefone, Gerente FROM locadora.Filial");
                 ResultSet resultados = stmt.executeQuery()) {
 
             while (resultados.next()) {
@@ -79,7 +76,7 @@ public class ControllerFilial {
 
             try (PreparedStatement stmt
                     = conn.prepareStatement(
-                            "INSERT INTO test.Filial (NomeUnidade, Rua, Numero, Cep, Telefone, Gerente) VALUES (?,?,?,?,?,?)")) {
+                            "INSERT INTO locadora.Filial (NomeUnidade, Rua, Numero, Cep, Telefone, Gerente) VALUES (?,?,?,?,?,?)")) {
                 stmt.setString(1, p.getNomeUnidade());
                 stmt.setString(2, p.getRua());
                 stmt.setInt(3, p.getNumero());
@@ -131,7 +128,7 @@ public class ControllerFilial {
         boolean deletado = false;
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "DELETE FROM test.Filial WHERE id = ? ")) {
+                        "DELETE FROM locadora.Filial WHERE id = ? ")) {
             stmt.setInt(1, id);
             stmt.executeUpdate();
             deletado = true;
@@ -152,7 +149,7 @@ public class ControllerFilial {
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "select * FROM test.Filial WHERE id = " + id);
+                        "select * FROM locadora.Filial WHERE id = " + id);
                 ResultSet resultados = stmt.executeQuery()) {
 
             while (resultados.next()) {

@@ -15,10 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author guilherme.frocha6
- */
+
 @WebServlet(name = "AtualizarPedido", urlPatterns = {"/AtualizarPedido"})
 public class AtualizarPedidoServlet extends HttpServlet {
 

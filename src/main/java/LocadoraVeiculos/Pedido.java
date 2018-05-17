@@ -7,10 +7,7 @@ package LocadoraVeiculos;
 
 import java.util.Date;
 
-/**
- *
- * @author guilherme.rocha
- */
+
 public class Pedido {
     private long Id;
     private long IdPessoa;
