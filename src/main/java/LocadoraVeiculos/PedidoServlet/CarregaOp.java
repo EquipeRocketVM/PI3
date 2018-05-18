@@ -97,6 +97,8 @@ public class CarregaOp extends HttpServlet {
         request.setAttribute("listaCarro2", listaCarro2);
         request.setAttribute("listaPlano2", listaPlano2);
 
-        request.getRequestDispatcher("Filial/form-pedido-cadastro.jsp").forward(request, response);
+        //request.getRequestDispatcher("Filial/form-pedido-cadastro.jsp").forward(request, response);
+        //Coloquei como pedido pois estava filial, e esse carrega op tem que estar conectado com pedido
+        request.getRequestDispatcher("Pedido/form-pedido-cadastro.jsp").forward(request, response);
     }
 }
