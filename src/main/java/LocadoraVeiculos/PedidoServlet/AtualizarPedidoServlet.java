@@ -73,20 +73,7 @@ public class AtualizarPedidoServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     
-//        String Id = request.getParameter("id_pedido");
-//        String IdPessoa = request.getParameter("id_cliente");
-//        String IdPlano = request.getParameter("id_plano");
-//        String IdCarro = request.getParameter("id_carro");
-//        String IdFuncionario = request.getParameter("id_funcionario");
-//        String Idfilial = request.getParameter("id_filial");
-//        String DataDevolucao = request.getParameter("dtlocacao");
-//        String DiasAlugados = request.getParameter("dias_alugados");
-//        String Status = request.getParameter("ped_status");
-//        String ValorTotal = request.getParameter("vlr_total");
-//        
-//        System.out.println(ValorTotal + " esse é o valor");
-//        
-//        Pedido pe = new Pedido (Integer.parseInt(DiasAlugados))
+
     }
 
     /**

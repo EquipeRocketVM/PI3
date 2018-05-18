@@ -1,7 +1,7 @@
 <%-- 
     Document   : HomePage
     Created on : 15/05/2018, 14:23:33
-    Author     : victor.galvao
+    Author     : Vitória Cristina 
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,7 +17,9 @@
         <h3><a href= "${pageContext.request.contextPath}/HomeFuncionarioServlet" > Funcionarios </a> </h3><p>
         <h3><a href= "${pageContext.request.contextPath}/HomePessoaServlet" > Clientes </a> </h3><p> 
         <h3><a href= "${pageContext.request.contextPath}/HomeFilialServlet" > Filiais </a> </h3><p> 
-    
+        <h3><a href= "${pageContext.request.contextPath}/HomePlanoServlet" > Planos </a> </h3><p> 
+        <h3><a href= "${pageContext.request.contextPath}/CarregaOp" > Pedidos </a> </h3><p>
+           
     <h5><a href="${pageContext.request.contextPath}/Sair"> Logout </a></h5>
     </body>
     

@@ -1,7 +1,7 @@
 <%-- 
     Document   : PlanoInicio
     Created on : 30/04/2018, 16:17:38
-    Author     : victor.galvao
+    Author     : Vitória Cristina
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -1,7 +1,7 @@
 <%-- 
     Document   : Login
     Created on : 15/05/2018, 11:40:54
-    Author     : victor.galvao
+    Author     : Vitória Cristina
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,10 +21,10 @@
         <div class="container">
             <form class="form-signin" method="post" action="Login">
                 <h1>Locadora de Veículos ASTEC</h1><hr>
-                <h3>Por favor, entre.</h3>
+                
                 <div class="form-group">
                     <label>Email:</label>
-                    <%-- NO BANCO NAO PEDE EMAIL, COLOQUEI, NÃO ENTREI EM CONTATO COM O BANCO--%>
+                    
                     <input type="text" name="email" class="form-control" placeholder="email" />
                 </div>
                 <div class="form-group">

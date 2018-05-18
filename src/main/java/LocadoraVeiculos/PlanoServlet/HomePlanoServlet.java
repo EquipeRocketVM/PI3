@@ -13,10 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author victor.galvao
- */
+
 @WebServlet(name = "HomePlanoServlet", urlPatterns = {"/HomePlanoServlet"})
 public class HomePlanoServlet extends HttpServlet {
 

@@ -24,10 +24,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author guilherme.frocha6
- */
+
 @WebServlet(name = "CadastroPedidoServlet", urlPatterns = {"/cadastro-pedido"})
 public class CadastroPedidoServlet extends HttpServlet {
 

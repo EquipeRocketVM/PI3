@@ -1,7 +1,7 @@
 <%-- 
     Document   : Home
     Created on : 17/04/2018, 12:37:51
-    Author     : victor.galvao
+    Author     : Vitória Cristina
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

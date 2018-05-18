@@ -19,10 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author victor.gsgalvao
- */
+
 @WebServlet(name = "AtualizarPlano", urlPatterns = {"/AtualizarPlano"})
 public class AtualizarPlanoServlet extends HttpServlet {
 
@@ -116,7 +113,7 @@ public class AtualizarPlanoServlet extends HttpServlet {
                request.setAttribute("planoUpdate", p1);
                RequestDispatcher dispatcher = request.getRequestDispatcher("Plano/resultadoDelete.jsp");
                 dispatcher.forward(request, response);
-                System.out.println("ENTROU NO DELETAr");
+                System.out.println("ENTROU NO DELETAR");
             }
 
         } catch (Exception e) {
