@@ -13,21 +13,25 @@
     <%@include file="WEB-INF/Includes/header.jsp" %>
     <body>
         <div class="container">
-            <div class="row justify-content-md-center" style="margin-top: 50px">
+            <div class="row justify-content-md-center" style="margin-top: 100px">
                 <div class="col-md-auto">
-                    <h1>Locadora de Veiculos</h1>
+                    <h1>Equipe Rocket</h1>
+                    <br><br><br><br><br>
                     <form action="${pageContext.request.contextPath}/Autenticar" method="post">
 
-                        <div class="form-group">
-                            <label>Login:</label>
-                            <input type="text" class="form-control" name="login" />
+                        
+                        <div class="form-label-group">
+                            <input type="text" name="login" class="form-control" placeholder="Login" required autofocus>
+                            <label for="inputEmail"></label>
                         </div>
-                        <div class="form-group">
-                            <label>Senha:</label>
-                            <input type="password" class="form-control" name="senha" />
+                        <div class="form-label-group">
+                          <input type="password" name="senha" class="form-control" placeholder="Senha" required>
+                          <label for="inputPassword"></label>
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                            <p class="mt-5 mb-3 text-muted text-center">&copy; Equipe Rocket 2018</p>
+                            
                         </div>
                     </form>
                 </div>
