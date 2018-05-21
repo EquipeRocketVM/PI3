@@ -81,7 +81,7 @@ public class ListarPlanosServlet extends HttpServlet {
         }
         
          request.setAttribute("lista", lista);
-        request.getRequestDispatcher("Plano/ListarPlano.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/Plano/ListarPlano.jsp").forward(request, response);
         
   
     }

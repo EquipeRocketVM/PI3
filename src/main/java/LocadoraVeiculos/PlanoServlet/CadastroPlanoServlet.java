@@ -28,7 +28,7 @@ public class CadastroPlanoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-    request.getRequestDispatcher("Plano/form-plano-cadastro.jsp").forward(request, response);  
+    request.getRequestDispatcher("WEB-INF/Plano/form-plano-cadastro.jsp").forward(request, response);  
 
     }
 
@@ -53,7 +53,7 @@ public class CadastroPlanoServlet extends HttpServlet {
         request.setAttribute("planoCadastrado", p1);
 
         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("Plano/resultadoCadastro.jsp");
+                = request.getRequestDispatcher("WEB-INF/Plano/resultadoCadastro.jsp");
         dispatcher.forward(request, response);
 
     }

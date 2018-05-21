@@ -37,8 +37,8 @@ public class BuscarPlanoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String idfilial = request.getParameter("id_plano");
-        int id = Integer.parseInt(idfilial.substring(1,2));
+        String idplano = request.getParameter("id_plano");
+        int id = Integer.parseInt(idplano.substring(1,2));
         ControllerPlano con = new ControllerPlano();
         Plano plano = new Plano();
         
@@ -50,7 +50,7 @@ public class BuscarPlanoServlet extends HttpServlet {
         }
 
         request.setAttribute("planoAtualizada", plano);
-        request.getRequestDispatcher("Plano/form-plano-resultado.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/Plano/form-plano-resultado.jsp").forward(request, response);
     }
 
     /**
@@ -65,22 +65,22 @@ public class BuscarPlanoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String idfilial = request.getParameter("idfilial");
+        String idplano = request.getParameter("idplano");
 
-        ControllerFilial con = new ControllerFilial();
+        ControllerPlano con = new ControllerPlano();
 
-        Filial filial = new Filial();
+        Plano plano = new Plano();
 
         try {
 
-            filial = con.select(Integer.parseInt(idfilial));
+            plano = con.select(Integer.parseInt(idplano));
 
         } catch (Exception e) {
         }
 
-        request.setAttribute("pessoaAtualizada", filial);
+        request.setAttribute("pessoaAtualizada", plano);
 
-        request.getRequestDispatcher("WEB-INF/Filial/form-filial-resultado.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/Plano/form-filial-resultado.jsp").forward(request, response);
 
     }
 
