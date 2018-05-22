@@ -9,6 +9,6 @@
   <body>
     <h1>Plano: <c:out value="${planoUpdate.plano}" /> atualizada com sucesso</h1>
     <p>
-        <a href= "${pageContext.request.contextPath}/HomePlanoServlet" > Voltar </a>     
+        <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>     
   </body>
 </html>

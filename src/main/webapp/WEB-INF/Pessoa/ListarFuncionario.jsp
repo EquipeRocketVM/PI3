@@ -22,7 +22,7 @@
 	  </li>
 	</c:forEach>
       </ul> <p>
-        <a href= "http://localhost:8080/agendaweb-1.0-SNAPSHOT/Pessoa/FuncionarioInicio.jsp" > Voltar </a> 
+        <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a> 
     </div>
   </body>
 </html>

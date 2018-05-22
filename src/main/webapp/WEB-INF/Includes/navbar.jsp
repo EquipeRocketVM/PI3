@@ -52,7 +52,8 @@
           Locações
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/cadastro-plano">Cadastrar</a>
+            <!--  esse aqui está dando erro, eu não sei por que -->
+          <a class="dropdown-item" href="${pageContext.request.contextPath}/cadastro-pedido">Cadastrar</a>
           <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarPedidosServlet">Pesquisar</a>
  
         </div>

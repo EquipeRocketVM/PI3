@@ -17,6 +17,6 @@
             <li><h3><a href="${pageContext.request.contextPath}/cadastro-plano"> Cadastro </a></h3></li>
             <li><h3><a href="${pageContext.request.contextPath}/ListarPlanosServlet"> Listar Todas </a></h3></li>
         </ul> 
-        <h5><a href="${pageContext.request.contextPath}/HomeServlet"> Voltar </a></h5>
+        <h5><a href="${pageContext.request.contextPath}/HomePage.jsp"> Voltar </a></h5>
     </body>
 </html>

@@ -32,6 +32,9 @@ public class CadastroPedidoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        // Isso foi colocado para testar o pedido cadastro
+         request.getRequestDispatcher("WEB-INF/Pedido/form-pedido-cadastro.jsp").forward(request, response);
 
     }
 
@@ -62,6 +65,14 @@ public class CadastroPedidoServlet extends HttpServlet {
         } catch (ParseException ex) {
             Logger.getLogger(CadastroPedidoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        //Isso foi adicionado para testar
+//         request.setAttribute("pedidoCadastrado", p);
+//
+//       RequestDispatcher dispatcher
+//              = request.getRequestDispatcher("WEB-INF/Pedido/resultadoCadastro.jsp");
+//      dispatcher.forward(request, response);
+
 
     }
 

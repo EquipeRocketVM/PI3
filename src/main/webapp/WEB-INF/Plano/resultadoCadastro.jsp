@@ -15,6 +15,6 @@
     <body>
        <h1>Plano <c:out value="${planoCadastrado.plano}" /> cadastrado com sucesso</h1>
     <p>
-    <a href= "${pageContext.request.contextPath}/HomePlanoServlet" > Voltar </a>   
+    <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>   
     </body>
 </html>

@@ -57,7 +57,7 @@
                 <p>
             </form>
             <p>
-                <a href= "${pageContext.request.contextPath}/HomePessoaServlet" > Voltar </a>         
+                <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>         
 
 
         </div>

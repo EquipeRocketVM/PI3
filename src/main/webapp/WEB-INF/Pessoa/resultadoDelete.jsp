@@ -9,6 +9,6 @@
   <body>
     <h1>Id carro: <c:out value="${ClienteUpdate.id}" /> deletado com sucesso</h1>
     <p>
-    <a href= "${pageContext.request.contextPath}/HomePessoaServlet" > Voltar </a>      
+    <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>      
   </body>
 </html>

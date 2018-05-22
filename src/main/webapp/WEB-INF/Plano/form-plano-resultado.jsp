@@ -44,7 +44,7 @@
                 <button type="submit">Salvar</button>
             </form>
             <p> 
-                <a href= "${pageContext.request.contextPath}/HomePlanoServlet" > Voltar </a>  
+                <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>  
         </div>
                 
     <script>

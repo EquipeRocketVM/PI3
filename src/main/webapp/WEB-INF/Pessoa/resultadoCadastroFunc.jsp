@@ -9,6 +9,6 @@
   <body>
     <h1>Pessoa: <c:out value="${funcCadastrado.nome}" /> cadastrado com sucesso</h1>
     <p>
-    <a href= "${pageContext.request.contextPath}/HomeFuncionarioServlet" > Voltar </a>    
+    <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>    
   </body>
 </html>

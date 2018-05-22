@@ -7,7 +7,7 @@
     </head>
     <body>
         <div> 
-            <h1>Cadastre um Carro</h1>
+            <h1>Cadastre um Funcionário: </h1>
         </div>
         <div>
             <form action="${pageContext.request.contextPath}/cadastro-funcionario"
@@ -71,7 +71,7 @@
                 <p>
             </form>
             <p>
-                <a href= "${pageContext.request.contextPath}/HomeFuncionarioServlet" > Voltar </a>     
+                <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>     
 
 
         </div>
