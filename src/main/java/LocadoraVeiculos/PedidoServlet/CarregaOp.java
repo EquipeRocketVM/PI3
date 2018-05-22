@@ -99,6 +99,6 @@ public class CarregaOp extends HttpServlet {
 
         //request.getRequestDispatcher("Filial/form-pedido-cadastro.jsp").forward(request, response);
         //Coloquei como pedido pois estava filial, e esse carrega op tem que estar conectado com pedido
-        request.getRequestDispatcher("Pedido/form-pedido-cadastro.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/Pedido/form-pedido-cadastro.jsp").forward(request, response);
     }
 }
