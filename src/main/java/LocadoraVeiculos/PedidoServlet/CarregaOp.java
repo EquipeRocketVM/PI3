@@ -48,7 +48,7 @@ public class CarregaOp extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        request.getRequestDispatcher("WEB-INF/Pedido/TipoCarro.jsp").forward(request, response);
     }
 
     @Override
