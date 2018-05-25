@@ -10,6 +10,7 @@ import LocadoraVeiculos.ControllerFilial;
 import LocadoraVeiculos.ControllerPlano;
 import LocadoraVeiculos.DaoCarro;
 import LocadoraVeiculos.Filial;
+import LocadoraVeiculos.Pessoa;
 import LocadoraVeiculos.Plano;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,6 +49,11 @@ public class CarregaOp extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+       Pessoa funcionario = (Pessoa) request.getSession().getAttribute("funcionario");
+        if (funcionario == null) {
+            response.sendRedirect("index.jsp");
+        }
         request.getRequestDispatcher("WEB-INF/Pedido/TipoCarro.jsp").forward(request, response);
     }
 
@@ -55,10 +61,10 @@ public class CarregaOp extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String idclass = request.getParameter("class");
-
-        int id = Integer.parseInt(idclass.substring(1, 2));
-
+        String idclass = request.getParameter("valor");
+        System.out.println(idclass+"         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        int id = Integer.parseInt(idclass.substring(0));
+        System.out.println(id);
         ControllerFilial daoFilial = new ControllerFilial();
 
         DaoCarro daoCarro = new DaoCarro();

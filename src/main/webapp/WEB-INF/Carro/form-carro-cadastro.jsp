@@ -11,7 +11,7 @@
         <div> 
             <h1 style="align-content: center">Cadastre um Carro:</h1><hr>
         </div>
-        <div>
+        <div style="align-content: center">
         <form>
                 <div class="form-row">
                 <div class="form-group col-md-6">

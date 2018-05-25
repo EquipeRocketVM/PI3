@@ -17,7 +17,7 @@
             
                 <div>
                 Classificação:
-                <select name="class">
+                <select name="valor">
                     <option value="1">Hatch</option>
                     <option value="2">Sedan</option>
                     <option value="3">SUV</option>
