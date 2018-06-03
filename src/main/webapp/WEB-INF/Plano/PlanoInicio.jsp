@@ -15,7 +15,8 @@
         <h1>Planos</h1><p>
         <ul>
             <li><h3><a href="${pageContext.request.contextPath}/cadastro-plano"> Cadastro </a></h3></li>
-            <li><h3><a href="${pageContext.request.contextPath}/ListarPlanosServlet"> Listar Todas </a></h3></li>
+            <li><h3><a href="${pageContext.request.contextPath}/ListarPlanosServlet"> Listar Planos </a></h3></li>
+            <li><h3><a href="${pageContext.request.contextPath}/AtualizarPlano"> Atualizar Plano </a></h3></li>
         </ul> 
         <h5><a href="${pageContext.request.contextPath}/HomePage.jsp"> Voltar </a></h5>
     </body>

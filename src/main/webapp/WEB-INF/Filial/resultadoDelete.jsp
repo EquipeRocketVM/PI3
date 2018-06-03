@@ -9,6 +9,6 @@
   <body>
     <h1>Id filia: <c:out value="${nome}" /> deletado com sucesso</h1>
     <p>
-    <a href= "${pageContext.request.contextPath}/HomeFilialServlet" > Voltar </a> 
+    <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a> 
   </body>
 </html>

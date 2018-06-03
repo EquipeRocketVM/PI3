@@ -103,7 +103,7 @@ public class AtualizarPlanoServlet extends HttpServlet {
               
                 request.setAttribute("planoUpdate", p1);
                 RequestDispatcher dispatcher
-                = request.getRequestDispatcher("Plano/resultadoAtualizar.jsp");
+                = request.getRequestDispatcher("WEB-INF/Plano/form-plano-resultado.jsp");
                 dispatcher.forward(request, response);
                 System.out.println("ENTROU NO ATUALIZAR");
                 
@@ -111,7 +111,7 @@ public class AtualizarPlanoServlet extends HttpServlet {
               con.excluir(p1.getIdplano());
               
                request.setAttribute("planoUpdate", p1);
-               RequestDispatcher dispatcher = request.getRequestDispatcher("Plano/resultadoDelete.jsp");
+               RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/Plano/resultadoDelete.jsp");
                 dispatcher.forward(request, response);
                 System.out.println("ENTROU NO DELETAR");
             }

@@ -1,8 +1,4 @@
-<%-- 
-    Document   : resultadoCadastro
-    Created on : 30/04/2018, 16:30:31
-    Author     : victor.galvao
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 

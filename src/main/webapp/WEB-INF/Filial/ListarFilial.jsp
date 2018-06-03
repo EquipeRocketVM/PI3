@@ -22,7 +22,7 @@
 	  </li>
 	</c:forEach>
       </ul> <p>
-        <a href= "${pageContext.request.contextPath}/HomeFilialServlet" > Voltar </a> 
+        <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a> 
     </div>
   </body>
 </html>
