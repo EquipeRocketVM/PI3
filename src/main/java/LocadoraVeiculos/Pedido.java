@@ -9,12 +9,12 @@ import java.util.Date;
 
 
 public class Pedido {
-    private long Id;
-    private long IdPessoa;
-    private long IdPlano;
-    private long IdCarro;
-    private long IdFuncionario;
-    private long Idfilial;
+    private int Id;
+    private int IdPessoa;
+    private int IdPlano;
+    private int IdCarro;
+    private int IdFuncionario;
+    private int Idfilial;
     private Date DataLocacao;
     private Date DataDevolucao;
     private int DiasAlugados;
@@ -25,7 +25,7 @@ public class Pedido {
         return Id;
     }
 
-    public void setId(long Id) {
+    public void setId(int Id) {
         this.Id = Id;
     }
 
@@ -33,7 +33,7 @@ public class Pedido {
         return IdPessoa;
     }
 
-    public void setIdPessoa(long IdPessoa) {
+    public void setIdPessoa(int IdPessoa) {
         this.IdPessoa = IdPessoa;
     }
 
@@ -41,7 +41,7 @@ public class Pedido {
         return IdPlano;
     }
 
-    public void setIdPlano(long IdPlano) {
+    public void setIdPlano(int IdPlano) {
         this.IdPlano = IdPlano;
     }
 
@@ -49,7 +49,7 @@ public class Pedido {
         return IdCarro;
     }
 
-    public void setIdCarro(long IdCarro) {
+    public void setIdCarro(int IdCarro) {
         this.IdCarro = IdCarro;
     }
 
@@ -57,7 +57,7 @@ public class Pedido {
         return IdFuncionario;
     }
 
-    public void setIdFuncionario(long IdFuncionario) {
+    public void setIdFuncionario(int IdFuncionario) {
         this.IdFuncionario = IdFuncionario;
     }
 
@@ -65,7 +65,7 @@ public class Pedido {
         return Idfilial;
     }
 
-    public void setIdfilial(long Idfilial) {
+    public void setIdfilial(int Idfilial) {
         this.Idfilial = Idfilial;
     }
 

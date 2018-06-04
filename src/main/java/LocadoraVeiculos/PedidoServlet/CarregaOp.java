@@ -92,7 +92,7 @@ public class CarregaOp extends HttpServlet {
                     listaPlano2.add(plan);
                 }
             }
-
+            
         } catch (ClassNotFoundException ex) {
             System.out.println("Verique o Retorno da Listagem.");
         } catch (SQLException ex) {

@@ -15,17 +15,19 @@
                   method="post">
 
                 <div>
-                    <c:forEach items="${listaPlano2}" var="p">
-                        Planos:
-                        <select name="idplano">
-                            <option value="${listaPlano2.idplano}"> ${listaPlano2.plano + ' Valor: R$ ' + Double.toString(listaPlano2.valor)}</option>
-                        </select>
+                    Planos:
+                    <select name="id_plano">
+                    <c:forEach items="${listaPlano2}" var="p">             
+                        
+                    <!-- ESSE KARAI AQUI N PEGA LIXO INFERNO DE PI-->        <option value="${listaPlano2.idplano}"> ${listaPlano2.plano + ' Valor: R$ ' + Double.toString(listaPlano2.valor)}</option>
+                      
                     </c:forEach>
+                            </select>
                 </div> <p>
 
                 <div>
+                    Carros:
                     <c:forEach items="${listaCarro2}" var="p">
-                        Carros:
                         <select name="idcarro">
                             <option value="${listaCarro2.idcarro}"> ${listaCarro2.carro}</option>
                         </select>
@@ -37,8 +39,8 @@
 
 
                 <div>
+                    Filiais:
                     <c:forEach items="${listaFilial}" var="p">
-                        Filiais:
                         <select name="idfilial">
                             <option value="${listaFilial.idfilial}"> ${listaFilial.filial}</option>
                         </select>
