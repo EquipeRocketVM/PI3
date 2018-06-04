@@ -23,18 +23,18 @@
                 
                  <div class="form-group" >
                 <label for="fabricante">Nome Plano:</label>
-                <input type="text" class="form-control" id="plano" placeholder="Rua da Filial">
+                <input type="text" class="form-control" name="plano" placeholder="Rua da Filial">
                 </div>
                 
                 <div class="form-group">
                 <label for="fabricante">Valor:</label>
-                <input type="text" class="form-control" id="valor" placeholder="Preço">
+                <input type="text" class="form-control" name="valor" placeholder="Preço">
                 </div>
                    
                 
                  <div class="form-group">
                 <label for="classificacao">Classificação: </label>
-                <select id="classificacao" class="form-control">
+                <select name="classificacao" class="form-control">
                     
                 <option selected>Escolha...</option>
                 <option>Hatch</option>
@@ -46,7 +46,7 @@
                 </select>
                 
                 </div>
-               <button type="button" class="btn btn-dark">Salvar</button>&nbsp;
+               <button type="submit" class="btn btn-dark">Salvar</button>&nbsp;
                <!-- <button type="button" class="btn btn-dark" <a href="${pageContext.request.contextPath}/HomePage.jsp">Voltar</button>
             <button type="submit">Enviar</button>
               -->

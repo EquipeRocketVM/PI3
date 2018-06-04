@@ -26,44 +26,44 @@
                 <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="carro">Nome Filial:</label>
-                <input type="text" class="form-control" id="filial" placeholder="Digite o nome desejado">
+                <input type="text" class="form-control" name="filial" placeholder="Digite o nome desejado">
                 
                 </div>
                      
                      <div class="form-group col-md-6">
                 <label for="valor">Telefone Filial:</label>
-                <input type="text" class="form-control" id="telefone" placeholder="(xx)xxxx-xxxx">
+                <input type="text" class="form-control" name="telefone" placeholder="(xx)xxxx-xxxx">
                 
                 </div>
                 </div>
                     
                 <div class="form-group">
                 <label for="fabricante">Nome Rua:</label>
-                <input type="text" class="form-control" id="rua" placeholder="Rua da Filial">
+                <input type="text" class="form-control" name="rua" placeholder="Rua da Filial">
                 </div>
                 
                 
                       <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="cor">Número:</label>
-                <input type="text" class="form-control" id="numero" placeholder=" n° 1234 ">
+                <input type="text" class="form-control" name="numero" placeholder=" n° 1234 ">
                 
                 </div>
                 
                 <div class="form-group col-md-6">
                 <label for="ano">CEP:</label>
-                <input type="text" class="form-control" id="cep" placeholder="CEP da rua">
+                <input type="text" class="form-control" name="cep" placeholder="CEP da rua">
                 
                 </div>
                       </div>
                 
                 <div class="form-group">
                 <label for="classificacao">Gerente</label>
-               <input type="text" class="form-control" id="gerente">
+               <input type="text" class="form-control" name="gerente">
                 </div>
                 
                 
-                    <button type="button" class="btn btn-dark">Salvar</button>&nbsp;
+                    <button type="submit" class="btn btn-dark">Salvar</button>&nbsp;
                     <!--<button type="button" class="btn btn-dark" <a href="${pageContext.request.contextPath}/HomePage.jsp"></a>>Voltar</button>
 -->
                        <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>

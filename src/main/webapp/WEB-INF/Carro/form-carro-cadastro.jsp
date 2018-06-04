@@ -19,31 +19,31 @@
                 <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="carro">Carro</label>
-                <input type="text" class="form-control" id="carro" placeholder="Carro">
+                <input type="text" class="form-control" name="carro" placeholder="Carro">
                 
                 </div>
                 <div class="form-group col-md-6">
                 <label for="fabricante">Fabricante</label>
-                <input type="text" class="form-control" id="fabricante" placeholder="Fabricante">
+                <input type="text" class="form-control" name="fabricante" placeholder="Fabricante">
                 </div>
                 </div>
                 
                 <div class="form-group">
                 <label for="cor">Cor</label>
-                <input type="text" class="form-control" id="cor" placeholder="1234 Main St">
+                <input type="text" class="form-control" name="cor" placeholder="1234 Main St">
                 
                 </div>
                 
                 <div class="form-group">
                 <label for="ano">Ano</label>
-                <input type="text" class="form-control" id="ano" placeholder="Ano do carro">
+                <input type="text" class="form-control" name="ano" placeholder="Ano do carro">
                 
                 </div>
                 
                 <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="valor">Valor</label>
-                <input type="text" class="form-control" id="valor">
+                <input type="text" class="form-control" name="valor">
                 
                 </div>
                     
@@ -63,7 +63,7 @@
                 </div>
                 </div>
                 
-             <button type="button" class="btn btn-dark">Salvar</button>&nbsp;
+             <button type="submit" class="btn btn-dark">Salvar</button>&nbsp;
              <!--<button type="button" class="btn btn-dark" <a href="${pageContext.request.contextPath}/HomePage.jsp"></a>>Voltar</button>
 -->
                         <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>  

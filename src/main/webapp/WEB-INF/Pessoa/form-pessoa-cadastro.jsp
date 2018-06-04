@@ -19,26 +19,26 @@
                   method="post">
               <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="email" class="form-control" id="nome" placeholder="Ex José">
+                <input type="email" class="form-control" name="nome" placeholder="Ex José">
         </div>
         <div class="form-group">
                 <label for="sobrenome">Sobrenome</label>
-                <input type="password" class="form-control" id="sobrenome" placeholder="Ex Ernaldo">
+                <input type="password" class="form-control" name="sobrenome" placeholder="Ex Ernaldo">
         </div>
         
         <div class="form-group">
                 <label for="endereço">Endereço Residêncial</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder=" Ex Sto Amaro n° 1234 ">
+                <input type="text" class="form-control" name="inputAddress" placeholder=" Ex Sto Amaro n° 1234 ">
         </div>
         
         <div class="form-row">
         <div class="form-group col-md-6">
                  <label for="cidade">Cidade</label>
-                <input type="text" class="form-control" id="cidade">
+                <input type="text" class="form-control" name="cidade">
         </div>
         <div class="form-group col-md-4">
              <label for="estado">Estado</label>
-                 <select id="estado" class="form-control">
+                 <select name="estado" class="form-control">
                     <option selected>Escolha o Estado...</option>
                     <option> AC </option>
                     <option> AL </option>
@@ -73,36 +73,36 @@
         </div>
         <div class="form-group col-md-2">
                      <label for="cep">CEP</label>
-                 <input type="text" class="form-control" id="cep">
+                 <input type="text" class="form-control" name="cep">
         </div>
         </div>
                 <div class="form-group">
                 <label for="email"> Email </label>
-                <input type="text" class="form-control" id="email" placeholder="Ex jose.oliveira@gmail.com">
+                <input type="text" class="form-control" name="email" placeholder="Ex jose.oliveira@gmail.com">
         </div>
                 <!--  não sei colocar o calendário do lado-->
                 <div class="form-row">
                      <div class="form-group col-md-6">
                 <label for="data">Data Nascismento</label>
-                <input type="date" class="form-control" id="data">
+                <input type="date" class="form-control" name="data">
         </div>
                    <div class="form-group col-md-6">
                 <label for="cpf">Cpf</label>
-                <input type="text" class="form-control" id="cpf" placeholder=" ex 47602342844">
+                <input type="text" class="form-control" name="cpf" placeholder=" ex 47602342844">
                 </div>  
                 </div>
                  <div class="form-group">
                 <label for="telefone"> Telefone </label>
-                <input type="text" class="form-control" id="telefone" placeholder="Ex 953247642">
+                <input type="text" class="form-control" name="telefone" placeholder="Ex 953247642">
         </div>
                
                  <div class="form-group">
                 <label for="cnh"> CNH </label>
-                <input type="text" class="form-control" id="cnh">
+                <input type="text" class="form-control" name="cnh">
         </div>
                  <div class="form-group">
                 <label for="renda"> Renda Mensal </label>
-                <input type="text" class="form-control" id="renda">
+                <input type="text" class="form-control" name="renda">
         </div>                              
                 <button type="button" class="btn btn-dark">Salvar</button>&nbsp;
                 <!--<button type="button" class="btn btn-dark" <a href="${pageContext.request.contextPath}/HomePage.jsp"></a>>Voltar</button>
