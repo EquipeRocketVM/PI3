@@ -80,7 +80,8 @@ public class DaoPedido {
     public void incluir(Pedido p) throws ClassNotFoundException, SQLException {
         try (Connection conn = obterConexao()) {
             conn.setAutoCommit(false);
-
+            System.out.println("-------------------------------------------------------- "+p.getDataDevolucao());
+            System.out.println("-------------------------------------------------------- "+p.getDataLocacao());
             System.out.println(p.getId() + " id Pedido é: ");
 
             try (PreparedStatement stmt
