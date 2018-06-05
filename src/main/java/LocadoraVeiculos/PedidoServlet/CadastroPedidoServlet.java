@@ -8,9 +8,7 @@ package LocadoraVeiculos.PedidoServlet;
 import LocadoraVeiculos.DaoPedido;
 import LocadoraVeiculos.Pedido;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,7 +16,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,7 +42,7 @@ public class CadastroPedidoServlet extends HttpServlet {
 
         SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
         DaoPedido conn = new DaoPedido();
-        
+        Pedido p = new Pedido();
         String idplano = request.getParameter("idplano");
         String idcarro = request.getParameter("idcarro");
         String idfilial = request.getParameter("idfilial");
@@ -58,26 +55,41 @@ public class CadastroPedidoServlet extends HttpServlet {
             long diff = date2.getTime() - date1.getTime();
             float days = (diff / (1000*60*60*24));
             
-            Pedido p = new Pedido();
             
-            
+            p.setDataLocacao(date1);
+            p.setDataDevolucao(date2);
+            p.setDiasAlugados((int) diff);
+            p.setValorTotal(days);
+                       
+            conn.incluir(p);
+            System.out.println("PEDIDO ADD KRL! " + p.getValorTotal());   
 
         } catch (ParseException ex) {
             Logger.getLogger(CadastroPedidoServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CadastroPedidoServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroPedidoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        
+
+            
+        
+        
         //Isso foi adicionado para testar
-//         request.setAttribute("pedidoCadastrado", p);
-//
-//       RequestDispatcher dispatcher
-//              = request.getRequestDispatcher("WEB-INF/Pedido/resultadoCadastro.jsp");
-//      dispatcher.forward(request, response);
+         request.setAttribute("pedidoCadastrado", p);
+
+       RequestDispatcher dispatcher
+              = request.getRequestDispatcher("WEB-INF/Pedido/resultadoCadastro.jsp");
+      dispatcher.forward(request, response);
 
 
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 
 }

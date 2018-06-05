@@ -79,7 +79,7 @@ public class BuscarFilialServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String idfilial = request.getParameter("idfilial");
+        String idfilial = request.getParameter("id");
 
         ControllerFilial con = new ControllerFilial();
 
@@ -105,7 +105,7 @@ public class BuscarFilialServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "inferno";
     }// </editor-fold>
 
 }

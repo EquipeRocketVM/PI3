@@ -17,21 +17,19 @@
                 <div>
                     Planos:
                     <select name="id_plano">
-                    <c:forEach items="${listaPlano2}" var="p">             
-                        
-                    <!-- ESSE KARAI AQUI N PEGA LIXO INFERNO DE PI-->        <option value="${listaPlano2.idplano}"> ${listaPlano2.plano + ' Valor: R$ ' + Double.toString(listaPlano2.valor)}</option>
-                      
+                    <c:forEach items="${listaPlano2}" var="p">                                    
+                    <option value="${p.idplano}"> ${p.plano}</option>                    
                     </c:forEach>
                             </select>
                 </div> <p>
 
                 <div>
                     Carros:
-                    <c:forEach items="${listaCarro2}" var="p">
-                        <select name="idcarro">
-                            <option value="${listaCarro2.idcarro}"> ${listaCarro2.carro}</option>
-                        </select>
-                    </c:forEach>
+                    <select name="idcarro">
+                        <c:forEach items="${listaCarro2}" var="p">
+                            <option value="${p.idcarro}"> ${p.carro}</option>                 
+                        </c:forEach>
+                    </select>
                 </div>
                 <!--<div>
                     Id Funcionario: <input type="text" name="id_funcionario" />
@@ -40,11 +38,11 @@
 
                 <div>
                     Filiais:
+                    <select name="idfilial">
                     <c:forEach items="${listaFilial}" var="p">
-                        <select name="idfilial">
-                            <option value="${listaFilial.idfilial}"> ${listaFilial.filial}</option>
-                        </select>
+                      <option value="${p.id}"> ${p.nomeUnidade}</option>     
                     </c:forEach>
+                     </select>
                 </div>
 
 

@@ -100,14 +100,14 @@ public class DaoPedido {
                 stmt.setInt(9, p.getDiasAlugados());
                 stmt.setString(10, p.getStatus());
                 stmt.setDouble(11, p.getValorTotal());
-
+                System.out.println("testeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
                 int status = stmt.executeUpdate();
 
                 // Efetivar todas as operações no BD
                 conn.commit();
             }
         } catch (SQLException e) {
-            // Em caso de erro, volta para situação inicial
+            System.out.println("erro dao pedido");
 
             throw e;
         }

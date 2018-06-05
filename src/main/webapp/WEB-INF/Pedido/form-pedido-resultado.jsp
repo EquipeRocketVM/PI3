@@ -16,7 +16,7 @@
             <h1>Atualizar uma Pedido</h1>
         </div>
         <div>
-            <form action="${pageContext.request.contextPath}/AtualizarPedido"
+            <form action="${pageContext.request.contextPath}/resultadoCadastro"
                   method="post">
          <div>
             Id Pedido <input type="text" name="id_pedido" />
