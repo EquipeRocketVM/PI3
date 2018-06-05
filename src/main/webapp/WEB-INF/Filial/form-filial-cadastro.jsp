@@ -9,6 +9,7 @@
     </head>
     
     <body>
+        <%@include file="WEB-INF/Includes/navbar.jsp" %>
         
         
         <div class="container">
