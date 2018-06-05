@@ -9,7 +9,6 @@ import LocadoraVeiculos.DaoPedido;
 import LocadoraVeiculos.Pedido;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -55,10 +54,7 @@ public class CadastroPedidoServlet extends HttpServlet {
             Date date2 = myFormat.parse(dtdevolucao);
             long diff = date2.getTime() - date1.getTime();
             float days = (diff / (1000*60*60*24));
-            DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-            date1 =  (java.util.Date)formatter.parse(dtlocacao);
-            java.sql.Date dataSqlLOC = new java.sql.Date(date1.getTime());
-            java.sql.Date dataSqlDEV = new java.sql.Date(date2.getTime());
+            
             
             p.setDataLocacao(date1);
             p.setDataDevolucao(date2);
