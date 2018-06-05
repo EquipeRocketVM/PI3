@@ -9,7 +9,6 @@
     </head>
     
     <body>
-        <%@include file="WEB-INF/Includes/navbar.jsp" %>
         
         <div class="container">
             <div style="align-content: center">
