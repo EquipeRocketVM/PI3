@@ -19,31 +19,31 @@
                 <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="carro">Carro</label>
-                <input type="text" class="form-control" name="carro" placeholder="Carro">
+                <input type="text" class="form-control" name="carro" placeholder="Fusca">
                 
                 </div>
                 <div class="form-group col-md-6">
                 <label for="fabricante">Fabricante</label>
-                <input type="text" class="form-control" name="fabricante" placeholder="Fabricante">
+                <input type="text" class="form-control" name="fabricante" placeholder="Fiat">
                 </div>
                 </div>
                 
                 <div class="form-group">
                 <label for="cor">Cor</label>
-                <input type="text" class="form-control" name="cor" placeholder="1234 Main St">
+                <input type="text" class="form-control" name="cor" placeholder="Vermelho">
                 
                 </div>
                 
                 <div class="form-group">
                 <label for="ano">Ano</label>
-                <input type="text" class="form-control" name="ano" placeholder="Ano do carro">
+                <input type="text" class="form-control" name="ano" placeholder="1999">
                 
                 </div>
                 
                 <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="valor">Valor</label>
-                <input type="text" class="form-control" name="valor">
+                <input type="text" class="form-control" name="valor" placeholder="20000">
                 
                 </div>
                     
