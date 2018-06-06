@@ -46,6 +46,10 @@ public class Carro {
       
     }
 
+    public Carro(String carro, String fabricante, String cor, String ano, double parseDouble, int parseInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * @return the idcarro
      */

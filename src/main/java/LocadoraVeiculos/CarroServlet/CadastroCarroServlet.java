@@ -49,7 +49,7 @@ public class CadastroCarroServlet extends HttpServlet {
         String valor = request.getParameter("valor");
         String classe = request.getParameter("class");
 
-        Carro p1 = new Carro(carro, fabricante, cor, Integer.parseInt(ano), Double.parseDouble(valor), Integer.parseInt(classe));
+        Carro p1 = new Carro(carro, fabricante, cor, ano, Double.parseDouble(valor), Integer.parseInt(classe));
         DaoCarro con = new DaoCarro();
 
         try {
