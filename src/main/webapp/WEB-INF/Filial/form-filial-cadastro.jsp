@@ -26,20 +26,20 @@
                 <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="carro">Nome Filial:</label>
-                <input type="text" class="form-control" name="filial" placeholder="Digite o nome desejado">
+                <input type="text" class="form-control" name="filial" placeholder="Ex Matriz São Paulo">
                 
                 </div>
                      
                      <div class="form-group col-md-6">
                 <label for="valor">Telefone Filial:</label>
-                <input type="text" class="form-control" name="telefone" placeholder="(xx)xxxx-xxxx">
+                <input type="text" class="form-control" name="telefone" placeholder="(xx)xxxxxxxx">
                 
                 </div>
                 </div>
                     
                 <div class="form-group">
                 <label for="fabricante">Nome Rua:</label>
-                <input type="text" class="form-control" name="rua" placeholder="Rua da Filial">
+                <input type="text" class="form-control" name="rua" placeholder="ex José de Abreu">
                 </div>
                 
                 
@@ -52,7 +52,7 @@
                 
                 <div class="form-group col-md-6">
                 <label for="ano">CEP:</label>
-                <input type="text" class="form-control" name="cep" placeholder="CEP da rua">
+                <input type="text" class="form-control" name="cep" placeholder="ex 04952120">
                 
                 </div>
                       </div>

@@ -23,12 +23,12 @@
                 
                  <div class="form-group" >
                 <label for="fabricante">Nome Plano:</label>
-                <input type="text" class="form-control" name="plano" placeholder="Rua da Filial">
+                <input type="text" class="form-control" name="plano" placeholder="ex Plano luxo">
                 </div>
                 
                 <div class="form-group">
                 <label for="fabricante">Valor:</label>
-                <input type="text" class="form-control" name="valor" placeholder="Preço">
+                <input type="text" class="form-control" name="valor" placeholder="ex 200">
                 </div>
                    
                 
@@ -58,6 +58,7 @@
         </div>
                 </div>
                 </div>
+                
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     </body>

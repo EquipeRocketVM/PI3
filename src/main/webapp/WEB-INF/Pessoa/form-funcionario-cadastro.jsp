@@ -33,7 +33,7 @@
         
         <div class="form-group">
                 <label for="endereço">Endereço Residêncial</label>
-                <input type="text" class="form-control" name="inputAddress" placeholder=" Ex Sto Amaro n° 1234 ">
+                <input type="text" class="form-control" name="endereco" placeholder=" Ex Sto Amaro">
         </div>
         
         <div class="form-row">
@@ -113,10 +113,19 @@
         </div>
                     <div class="form-group col-md-4">
              <label for="nivel">Nível</label>
-                 <select id="nivel" class="form-control">
+                 <select name="nivel" class="form-control">
                     <option selected>Escolha o Nível posicionado...</option>
                     <option> Administrador </option>
                     <option> Operacional </option>
+                 </select>
+        </div>
+                    <div class="form-group col-md-4">
+             <label for="nivel">Filial</label>
+                 <select name="filial" class="form-control">
+                    <option selected>Escolha a Filial posicionado...</option>
+                    <option> São Paulo </option>
+                    <option> Campinas </option>
+                    <option> Brasilia </option>
                  </select>
         </div>
                     
