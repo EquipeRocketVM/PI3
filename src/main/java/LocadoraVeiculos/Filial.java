@@ -21,7 +21,7 @@ public class Filial {
     
     private int cep;
     
-    private int telefone;
+    private String telefone;
    
     private String gerente;
     
@@ -29,7 +29,7 @@ public class Filial {
       
     }
     
-    public Filial(String nomeUnidade, String Rua, int numero, int cep, int telefone, String gerente) {
+    public Filial(String nomeUnidade, String Rua, int numero, int cep, String telefone, String gerente) {
       DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
       this.nomeUnidade = nomeUnidade;
       this.rua = Rua;
@@ -113,14 +113,14 @@ public class Filial {
     /**
      * @return the telefone
      */
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
     /**
      * @param telefone the telefone to set
      */
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

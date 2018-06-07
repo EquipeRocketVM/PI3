@@ -100,7 +100,7 @@ public class AtualizarFilialServlet extends HttpServlet {
 
         System.out.println(metodo + " esse é o valor");
 
-        Filial p1 = new Filial(nome, rua, Integer.parseInt(numero), Integer.parseInt(cep), Integer.parseInt(telefone), gerente);
+        Filial p1 = new Filial(nome, rua, Integer.parseInt(numero), Integer.parseInt(cep), telefone, gerente);
         ControllerFilial con = new ControllerFilial();
 
         p1.setId(Integer.parseInt(id));

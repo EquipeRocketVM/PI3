@@ -50,7 +50,7 @@ public class ControllerFilial {
                 String rua = resultados.getString("Rua");
                 int numero = resultados.getInt("Numero");
                 int cep = resultados.getInt("Cep");
-                int telefone = resultados.getInt("Telefone");
+                String telefone = resultados.getString("Telefone");
                 String gerente = resultados.getString("Gerente");
 
                 Filial p = new Filial();
@@ -81,7 +81,7 @@ public class ControllerFilial {
                 stmt.setString(2, p.getRua());
                 stmt.setInt(3, p.getNumero());
                 stmt.setInt(4, p.getCep());
-                stmt.setInt(5, p.getTelefone());
+                stmt.setString(5, p.getTelefone());
                 stmt.setString(6, p.getGerente());
 
                 int status = stmt.executeUpdate();
@@ -109,7 +109,7 @@ public class ControllerFilial {
             stmt.setString(2, P.getRua());
             stmt.setInt(3, P.getNumero());
             stmt.setInt(4, P.getCep());
-            stmt.setInt(5, P.getTelefone());
+            stmt.setString(5, P.getTelefone());
             stmt.setString(6, P.getGerente());
             stmt.setInt(7, P.getId());
             stmt.executeUpdate();
@@ -158,7 +158,7 @@ public class ControllerFilial {
                 String rua = resultados.getString("Rua");
                 int numero = resultados.getInt("Numero");
                 int cep = resultados.getInt("Cep");
-                int telefone = resultados.getInt("Telefone");
+                String telefone = resultados.getString("Telefone");
                 String gerente = resultados.getString("Gerente");
 
                 filial.setId(id);

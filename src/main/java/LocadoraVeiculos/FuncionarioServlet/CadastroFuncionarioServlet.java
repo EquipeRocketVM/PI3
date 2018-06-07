@@ -25,7 +25,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet(name = "CadastroFuncionarioServlet", urlPatterns = {"/cadastro-funcionario"})
 public class CadastroFuncionarioServlet extends HttpServlet {
 
@@ -84,9 +83,9 @@ public class CadastroFuncionarioServlet extends HttpServlet {
         p1.setCep(Integer.parseInt(cep));
         p1.setEstado(estado);
         p1.setCidade(cidade);
-        p1.setDataNasc((java.sql.Date) data);   
+        p1.setDataNasc((java.sql.Date) data);
         p1.setCpf(cpf);
-        
+
         p1.setEmail(email);
         p1.setTelefone(telefone);
         p1.setCargo(cargo);
@@ -97,11 +96,25 @@ public class CadastroFuncionarioServlet extends HttpServlet {
         try {
 
             conn.incluir(p1);
-
             int id = conn.selectId(p1.getCpf());
             p1.setId(id);
-            conn.incluirFuncionario(p1);
 
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CadastroFuncionarioServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroFuncionarioServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(p1.getCargo().equals("Gerente")){
+            p1.setIdcargo(2);
+        }
+        if(p1.getCargo().equals("Vendedor")){
+            p1.setIdcargo(1);
+        }
+        if(p1.getCargo().equals("Diretor")){
+            p1.setIdcargo(3);
+        }
+        try {
+            conn.incluirFuncionario(p1);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(CadastroFuncionarioServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -110,9 +123,9 @@ public class CadastroFuncionarioServlet extends HttpServlet {
 
         request.setAttribute("funcCadastrado", p1);
 
-        RequestDispatcher dispatcher
-                = request.getRequestDispatcher("WEB-INF/Pessoa/resultadoCadastroFunc.jsp");
-        dispatcher.forward(request, response);
+//        RequestDispatcher dispatcher
+//                = request.getRequestDispatcher("WEB-INF/Pessoa/resultadoCadastroFunc.jsp");
+//        dispatcher.forward(request, response);
 
     }
 

@@ -58,7 +58,7 @@ public class CadastroFilialServlet extends HttpServlet {
         String telefone = request.getParameter("telefone");
         String gerente = request.getParameter("gerente");
 
-        Filial p1 = new Filial(nome, rua, Integer.parseInt(numero), Integer.parseInt(cep), Integer.parseInt(telefone), gerente);
+        Filial p1 = new Filial(nome, rua, Integer.parseInt(numero), Integer.parseInt(cep),telefone, gerente);
         
         
         ControllerFilial con = new ControllerFilial();

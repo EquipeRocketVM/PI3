@@ -104,34 +104,34 @@
             
                 <div class="form-row">
                 <div class="form-group col-md-6">
-                <label for="carro">Nome Filial:</label>
-                <input type="text" class="form-control" name="filial" placeholder="Ex Matriz São Paulo">
+                <label for="carro">Nome da Filial:</label>
+                <input type="text" class="form-control" name="nome" placeholder="Exemplo: Matriz São Paulo">
                 
                 </div>
                      
                      <div class="form-group col-md-6">
-                <label for="valor">Telefone Filial:</label>
-                <input type="text" class="form-control" name="telefone" placeholder="(xx)xxxxxxxx">
+                <label for="valor">Telefone da Filial:</label>
+                <input type="text" class="form-control" name="telefone" placeholder="Apenas números">
                 
                 </div>
                 </div>
                     
                 <div class="form-group">
                 <label for="fabricante">Nome Rua:</label>
-                <input type="text" class="form-control" name="rua" placeholder="ex José de Abreu">
+                <input type="text" class="form-control" name="rua" placeholder="Exemplo: José de Abreu">
                 </div>
                 
                 
                       <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="cor">Número:</label>
-                <input type="text" class="form-control" name="numero" placeholder=" n° 1234 ">
+                <input type="text" class="form-control" name="numero" placeholder="Exemplo: N° 1234 ">
                 
                 </div>
                 
                 <div class="form-group col-md-6">
                 <label for="ano">CEP:</label>
-                <input type="text" class="form-control" name="cep" placeholder="ex 04952120">
+                <input type="text" class="form-control" name="cep" placeholder="Exemplo: 04952120">
                 
                 </div>
                       </div>

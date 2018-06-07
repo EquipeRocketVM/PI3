@@ -56,9 +56,7 @@ public class DaoPessoa {
                 int status = stmt.executeUpdate();
 
                 conn.commit();
-                int id = selectId(p.getCpf());
-                p.setId(id);
-                incluirFuncionario(p);
+                
 
             }
 
@@ -98,7 +96,7 @@ public class DaoPessoa {
             conn.setAutoCommit(false);
             System.out.println(p.getId());
             System.out.println(p.getIdnivel());
-            System.out.println(p.getCargo());
+            System.out.println(p.getIdcargo());
             System.out.println(p.getLogin());
             System.out.println(p.getSenha());
 
@@ -110,7 +108,7 @@ public class DaoPessoa {
 
                 stmt.setInt(1, p.getId());
                 stmt.setInt(2, p.getIdnivel());
-                stmt.setString(3, p.getCargo());
+                stmt.setInt(3, p.getIdcargo());
                 stmt.setString(4, p.getLogin());
                 stmt.setString(5, p.getSenha());
                 stmt.setInt(6, 1);
@@ -118,7 +116,7 @@ public class DaoPessoa {
 
                 conn.commit();
             }
-
+            conn.close();
         } catch (SQLException e) {
             throw e;
         }

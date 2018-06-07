@@ -40,7 +40,7 @@ public class Pessoa {
 
     public Pessoa(String nome, String sobrenome, String rua, int numero, int cep, String estado,
             String cidade, String cpf, Date dtnascimento,
-            String email, String telefone, int tipo, List<Pessoa> cargos) {
+            String email, String telefone, int tipo, String cargos) {
 
         this.nome = nome;
         this.sobrenome = sobrenome;
