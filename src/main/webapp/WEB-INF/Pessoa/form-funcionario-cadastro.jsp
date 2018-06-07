@@ -112,7 +112,11 @@
         
         <div class="form-group">
                 <label for="endereço">Endereço Residêncial</label>
-                <input type="text" class="form-control" name="endereco" placeholder=" Ex Sto Amaro">
+                <input type="text" class="form-control" name="rua" placeholder=" Ex Sto Amaro">
+        </div>
+               <div class="form-group col-md-6">
+                 <label for="cidade">Número</label>
+                <input type="text" class="form-control" name="numero">
         </div>
         
         <div class="form-row">
@@ -168,7 +172,7 @@
                 <div class="form-row">
                      <div class="form-group col-md-6">
                 <label for="data">Data Nascismento</label>
-                <input type="date" class="form-control" name="data">
+                <input type="date" class="form-control" name="dtnascimento">
         </div>
                    <div class="form-group col-md-6">
                 <label for="cpf">Cpf</label>
