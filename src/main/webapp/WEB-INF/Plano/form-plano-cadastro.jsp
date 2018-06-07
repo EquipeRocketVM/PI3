@@ -114,15 +114,15 @@
                 
                  <div class="form-group">
                 <label for="classificacao">Classificação: </label>
-                <select name="classificacao" class="form-control">
+                <select name="class" class="form-control">
                     
                 <option selected>Escolha...</option>
-                <option>Hatch</option>
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Picapes</option>
-                <option>Esportivos</option>
-                <option>Vans</option>
+                <option value="1">Hatch</option>
+                <option value="2">Sedan</option>
+                <option value="3">SUV</option>
+                <option value="4">Picapes</option>
+                <option value="5">Esportivos</option>
+                <option value="6">Vans</option>
                 </select>
                 
                 </div>
