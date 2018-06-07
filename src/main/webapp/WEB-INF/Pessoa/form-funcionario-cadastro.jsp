@@ -198,8 +198,8 @@
              <label for="nivel">Nível</label>
                  <select name="nivel" class="form-control">
                     <option selected>Escolha o Nível posicionado...</option>
-                    <option> Administrador </option>
-                    <option> Operacional </option>
+                    <option value="1"> Administrador </option>
+                    <option value="2"> Operacional </option>
                  </select>
         </div>
                     <div class="form-group col-md-4">

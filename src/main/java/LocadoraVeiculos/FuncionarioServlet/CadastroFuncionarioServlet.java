@@ -84,11 +84,11 @@ public class CadastroFuncionarioServlet extends HttpServlet {
         p1.setCep(Integer.parseInt(cep));
         p1.setEstado(estado);
         p1.setCidade(cidade);
-        p1.setDataNasc((java.sql.Date) data);
-        p1.setCpf(Double.parseDouble(cpf));
+        p1.setDataNasc((java.sql.Date) data);   
+        p1.setCpf(cpf);
         
         p1.setEmail(email);
-        p1.setTelefone(Integer.parseInt(telefone));
+        p1.setTelefone(telefone);
         p1.setCargo(cargo);
         p1.setIdnivel(Integer.parseInt(nivel));
         p1.setLogin(login);

@@ -41,10 +41,10 @@ public class DaoPessoa {
                 stmt.setInt(5, p.getCep());
                 stmt.setString(6, p.getEstado());
                 stmt.setString(7, p.getCidade());
-                stmt.setDouble(8, p.getCpf());
+                stmt.setString(8, p.getCpf());
                 stmt.setDate(9, p.getDataNasc());
                 stmt.setString(10, p.getEmail());
-                stmt.setInt(11, p.getTelefone());
+                stmt.setString(11, p.getTelefone());
 
                 if (p.getCnh() == 0) {
                     stmt.setInt(12, 2);
@@ -142,10 +142,10 @@ public class DaoPessoa {
                 int cep = resultados.getInt("cep");
                 String estado = resultados.getString("estado");
                 String cidade = resultados.getString("cidade");
-                double cpf = resultados.getDouble("cpf");
+                String cpf = resultados.getString("cpf");
                 Date dtnascimento = resultados.getDate("dtnascimento");
                 String email = resultados.getString("email");
-                int telefone = resultados.getInt("telefone");
+                String telefone = resultados.getString("telefone");
                 double cnh = resultados.getDouble("cnh");
                 double renda = resultados.getDouble("renda");
 
@@ -199,10 +199,10 @@ public class DaoPessoa {
                 int cep = resultados.getInt("cep");
                 String estado = resultados.getString("estado");
                 String cidade = resultados.getString("cidade");
-                double cpf = resultados.getDouble("cpf");
+                String cpf = resultados.getString("cpf");
                 Date dtnascimento = resultados.getDate("dtnascimento");
                 String email = resultados.getString("email");
-                int telefone = resultados.getInt("telefone");
+                String telefone = resultados.getString("telefone");
                 int idnivel = resultados.getInt("id_nivel");
                 String nivel = resultados.getString("nivel");
                 int idcargo = resultados.getInt("id_cargo");
@@ -244,7 +244,7 @@ public class DaoPessoa {
         return p;
     }
 
-    public int selectId(double cpf) throws ClassNotFoundException, SQLException {
+    public int selectId(String cpf) throws ClassNotFoundException, SQLException {
 
         Pessoa Pessoa = new Pessoa();
 
@@ -294,10 +294,10 @@ public class DaoPessoa {
                 int cep = resultados.getInt("cep");
                 String estado = resultados.getString("estado");
                 String cidade = resultados.getString("cidade");
-                double cpf = resultados.getDouble("cpf");
+                String cpf = resultados.getString("cpf");
                 Date dtnascimento = resultados.getDate("dtnascimento");
                 String email = resultados.getString("email");
-                int telefone = resultados.getInt("telefone");
+                String telefone = resultados.getString("telefone");
                 double cnh = resultados.getDouble("cnh");
                 double renda = resultados.getDouble("renda");
 
@@ -351,10 +351,10 @@ public class DaoPessoa {
                 int cep = resultados.getInt("cep");
                 String estado = resultados.getString("estado");
                 String cidade = resultados.getString("cidade");
-                double cpf = resultados.getDouble("cpf");
+                String cpf = resultados.getString("cpf");
                 Date dtnascimento = resultados.getDate("dtnascimento");
                 String email = resultados.getString("email");
-                int telefone = resultados.getInt("telefone");
+                String telefone = resultados.getString("telefone");
                 int idnivel = resultados.getInt("id_nivel");
                 String nivel = resultados.getString("nivel");
                 int idcargo = resultados.getInt("id_cargo");
@@ -410,10 +410,10 @@ public class DaoPessoa {
             stmt.setInt(5, P.getCep());
             stmt.setString(6, P.getEstado());
             stmt.setString(7, P.getCidade());
-            stmt.setDouble(8, P.getCpf());
+            stmt.setString(8, P.getCpf());
             stmt.setDate(9, P.getDataNasc());
             stmt.setString(10, P.getEmail());
-            stmt.setInt(11, P.getTelefone());
+            stmt.setString(11, P.getTelefone());
             stmt.setInt(12, P.getId());
 
             stmt.executeUpdate();
@@ -515,10 +515,10 @@ public class DaoPessoa {
                 int cep = resultados.getInt("cep");
                 String estado = resultados.getString("estado");
                 String cidade = resultados.getString("cidade");
-                double cpf = resultados.getDouble("cpf");
+                String cpf = resultados.getString("cpf");
                 Date dtnascimento = resultados.getDate("dtnascimento");
                 String email = resultados.getString("email");
-                int telefone = resultados.getInt("telefone");
+                String telefone = resultados.getString("telefone");
                 int idnivel = resultados.getInt("id_nivel");
                 String nivel = resultados.getString("nivel");
                 int idcargo = resultados.getInt("id_cargo");

@@ -20,10 +20,10 @@ public class Pessoa {
     private int cep;
     private String estado;
     private String cidade;
-    private double cpf;
+    private String cpf;
     private Date dataNasc;
     private String email;
-    private int telefone;
+    private String telefone;
     private int tipo;
     private double cnh;
     private double renda;
@@ -39,8 +39,8 @@ public class Pessoa {
     }
 
     public Pessoa(String nome, String sobrenome, String rua, int numero, int cep, String estado,
-            String cidade, int cpf, Date dtnascimento,
-            String email, int telefone, int tipo, List<Pessoa> cargos) {
+            String cidade, String cpf, Date dtnascimento,
+            String email, String telefone, int tipo, List<Pessoa> cargos) {
 
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -121,11 +121,11 @@ public class Pessoa {
         this.cidade = Cidade;
     }
 
-    public double getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(double cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -145,11 +145,11 @@ public class Pessoa {
         this.email = email;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
