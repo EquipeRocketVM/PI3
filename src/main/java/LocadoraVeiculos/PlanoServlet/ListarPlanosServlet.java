@@ -7,7 +7,7 @@ package LocadoraVeiculos.PlanoServlet;
 
 import LocadoraVeiculos.FilialServlet.*;
 import LocadoraVeiculos.ControllerFilial;
-import LocadoraVeiculos.ControllerPlano;
+import LocadoraVeiculos.DaoPlano;
 import LocadoraVeiculos.Filial;
 import LocadoraVeiculos.Plano;
 import java.io.IOException;
@@ -67,7 +67,7 @@ public class ListarPlanosServlet extends HttpServlet {
             throws ServletException, IOException {
         
         
-        ControllerPlano con = new ControllerPlano();
+        DaoPlano con = new DaoPlano();
         
         List<Plano> lista = new ArrayList<Plano>();
         

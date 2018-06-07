@@ -23,7 +23,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ControllerPlano {
+public class DaoPlano {
 
     private Connection obterConexao() throws ClassNotFoundException, SQLException {
         // 1A) Declarar o driver JDBC de acordo com o Banco de dados usado

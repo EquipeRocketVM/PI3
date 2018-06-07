@@ -7,7 +7,7 @@ package LocadoraVeiculos.PedidoServlet;
 
 import LocadoraVeiculos.Carro;
 import LocadoraVeiculos.ControllerFilial;
-import LocadoraVeiculos.ControllerPlano;
+import LocadoraVeiculos.DaoPlano;
 import LocadoraVeiculos.DaoCarro;
 import LocadoraVeiculos.Filial;
 import LocadoraVeiculos.Pessoa;
@@ -68,7 +68,7 @@ public class CarregaOp extends HttpServlet {
         ControllerFilial daoFilial = new ControllerFilial();
 
         DaoCarro daoCarro = new DaoCarro();
-        ControllerPlano daoPlano = new ControllerPlano();
+        DaoPlano daoPlano = new DaoPlano();
 
         List<Carro> listaCarro2 = new ArrayList<Carro>();
         List<Plano> listaPlano2 = new ArrayList<Plano>();

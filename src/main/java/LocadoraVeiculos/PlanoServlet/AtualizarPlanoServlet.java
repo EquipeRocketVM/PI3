@@ -7,7 +7,7 @@ package LocadoraVeiculos.PlanoServlet;
 
 import LocadoraVeiculos.FilialServlet.*;
 import LocadoraVeiculos.ControllerFilial;
-import LocadoraVeiculos.ControllerPlano;
+import LocadoraVeiculos.DaoPlano;
 import LocadoraVeiculos.Filial;
 import LocadoraVeiculos.Plano;
 import java.io.IOException;
@@ -93,7 +93,7 @@ public class AtualizarPlanoServlet extends HttpServlet {
         System.out.println(id_classificao + " esse é o valor");
 
         Plano p1 = new Plano( ds_plano, Integer.parseInt(id_classificao), Double.parseDouble(valor));
-        ControllerPlano con = new ControllerPlano();
+        DaoPlano con = new DaoPlano();
         
         p1.setIdplano(Integer.parseInt(id_plano));
 

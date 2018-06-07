@@ -17,7 +17,7 @@
 
                 <div>
                     Planos:
-                    <select name="id_plano">
+                    <select name="idplano">
                     <c:forEach items="${listaPlano2}" var="p">                                    
                     <option value="${p.idplano}"> ${p.plano}</option>                    
                     </c:forEach>

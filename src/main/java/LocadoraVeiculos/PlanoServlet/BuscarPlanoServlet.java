@@ -7,7 +7,7 @@ package LocadoraVeiculos.PlanoServlet;
 
 import LocadoraVeiculos.FilialServlet.*;
 import LocadoraVeiculos.ControllerFilial;
-import LocadoraVeiculos.ControllerPlano;
+import LocadoraVeiculos.DaoPlano;
 import LocadoraVeiculos.Filial;
 import LocadoraVeiculos.Plano;
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class BuscarPlanoServlet extends HttpServlet {
         
         String idplano = request.getParameter("id_plano");
         int id = Integer.parseInt(idplano.substring(1,2));
-        ControllerPlano con = new ControllerPlano();
+        DaoPlano con = new DaoPlano();
         Plano plano = new Plano();
         
         try {
@@ -67,7 +67,7 @@ public class BuscarPlanoServlet extends HttpServlet {
 
         String idplano = request.getParameter("idplano");
 
-        ControllerPlano con = new ControllerPlano();
+        DaoPlano con = new DaoPlano();
 
         Plano plano = new Plano();
 

@@ -10,7 +10,7 @@ import LocadoraVeiculos.Carro;
 import LocadoraVeiculos.PlanoServlet.*;
 import LocadoraVeiculos.FilialServlet.*;
 import LocadoraVeiculos.ControllerFilial;
-import LocadoraVeiculos.ControllerPlano;
+import LocadoraVeiculos.DaoPlano;
 import LocadoraVeiculos.DaoCarro;
 import LocadoraVeiculos.DaoPessoa;
 import LocadoraVeiculos.Filial;

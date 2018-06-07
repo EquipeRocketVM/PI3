@@ -7,7 +7,7 @@ package LocadoraVeiculos.PlanoServlet;
 
 import LocadoraVeiculos.FilialServlet.*;
 import LocadoraVeiculos.ControllerFilial;
-import LocadoraVeiculos.ControllerPlano;
+import LocadoraVeiculos.DaoPlano;
 import LocadoraVeiculos.Filial;
 import LocadoraVeiculos.Plano;
 import java.io.IOException;
@@ -41,7 +41,7 @@ public class CadastroPlanoServlet extends HttpServlet {
         String valor = request.getParameter("valor");
 
         Plano p1 = new Plano(plano, Integer.parseInt(id_classificao), Double.parseDouble(valor));
-        ControllerPlano con = new ControllerPlano();
+        DaoPlano con = new DaoPlano();
 
         try {
             con.incluir(p1);
