@@ -56,6 +56,9 @@ public class DaoPessoa {
                 int status = stmt.executeUpdate();
 
                 conn.commit();
+                int id = selectId(p.getCpf());
+                p.setId(id);
+                incluirFuncionario(p);
 
             }
 
@@ -80,6 +83,7 @@ public class DaoPessoa {
                 int status = stmt.executeUpdate();
 
                 conn.commit();
+                
             }
 
         } catch (SQLException e) {
