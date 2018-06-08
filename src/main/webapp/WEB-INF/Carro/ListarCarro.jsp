@@ -10,6 +10,18 @@
   <body>
     <h1>Carros Disponiveis</h1>
     <div>
+        
+        <!-- estou testando aqui para ver o botao de pesquisar por nome precisa fazer um novo select varias coisas
+         TUDO NO:FORM-CARRO-CADASTRO; LISTAR CARRO; BUSCARCARROSERVLET;
+        DAOCARRO;FORM-CARRO-RESULTADO;RESULTADOATUALIZAR--> 
+        <form action="${pageContext.request.contextPath}/buscar-carro?idcarro=" 
+                  method="post">
+       <input type="text" name="carro">  
+       <button type="submit">Pesquisar</button>
+        </form>
+        <label id="labelPesquisaCarro" text="Teste"></label>
+        
+        
       <ul>
 	<c:forEach items="${lista}" var="p">
 	  <li>

@@ -55,6 +55,7 @@ public class DaoCarro {
 
     }
 
+    // preciso fazer um select que nem esse mas para o nome do carro
     public Carro select(int id) throws ClassNotFoundException, SQLException {
 
         Carro carro = new Carro();

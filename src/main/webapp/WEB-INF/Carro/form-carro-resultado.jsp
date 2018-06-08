@@ -29,7 +29,7 @@
                     Ano: <input type="text" name="ano" value= "${carroAtualizada.ano}"/>
                 </div>  
                 <div>
-                    Valor Carro (Fipe): <input type="text" name="valor" value= "${carroAtualizada.valor}"/>
+                    Valor Carro: <input type="text" name="valor" value= "${carroAtualizada.valor}"/>
                 </div>
                 <div>
                     Classificação:
@@ -51,7 +51,7 @@
                 <button type="submit">Salvar</button>
             </form>
             <p> 
-                <a href= "${pageContext.request.contextPath}/HomeCarroServlet" > Voltar </a> 
+                <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a> 
 
                 <script>
 

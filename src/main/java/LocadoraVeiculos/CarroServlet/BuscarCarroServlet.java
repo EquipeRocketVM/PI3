@@ -36,6 +36,8 @@ public class BuscarCarroServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        
+        //tenho que fazer uma servlet só buscando por nome do carro para pesquisar por nome
         Pessoa funcionario = (Pessoa) request.getSession().getAttribute("funcionario");
         if (funcionario == null) {
             response.sendRedirect("index.jsp");
