@@ -14,7 +14,7 @@
         <!-- estou testando aqui para ver o botao de pesquisar por nome precisa fazer um novo select varias coisas
          TUDO NO:FORM-CARRO-CADASTRO; LISTAR CARRO; BUSCARCARROSERVLET;
         DAOCARRO;FORM-CARRO-RESULTADO;RESULTADOATUALIZAR--> 
-        <form action="${pageContext.request.contextPath}/buscar-nome?ds_carro=" 
+        <form action="${pageContext.request.contextPath}/buscar-carro?idcarro=" 
                   method="post">
             
             <!--  no name estava = carro e a label labelPesquisarCarro-->

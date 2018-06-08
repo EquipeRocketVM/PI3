@@ -66,7 +66,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="${pageContext.request.contextPath}/cadastro-plano">Cadastrar</a>
           <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarPlanosServlet">Listar Planos</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/AtualizarPlanoServlet">Atualizar</a>
+          
  
         </div>
       </li>
@@ -222,12 +222,11 @@
                 <input type="password" class="form-control" name="senha">
         </div>                              
               <button type="submit" class="btn btn-dark">Salvar</button>&nbsp;
-               <!--<button type="button" class="btn btn-dark" <a href="${pageContext.request.contextPath}/HomePage.jsp"></a>>Voltar</button>
-             <button type="submit">Enviar</button>
-              -->
+                <button type="submit" class="btn btn-dark"
+                            formaction="${pageContext.request.contextPath}/HomePage.jsp">Voltar</button>
                 
               
-                <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>
+                <!--<a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a>-->
                        
         </form>
         </div>
