@@ -14,12 +14,14 @@
         <!-- estou testando aqui para ver o botao de pesquisar por nome precisa fazer um novo select varias coisas
          TUDO NO:FORM-CARRO-CADASTRO; LISTAR CARRO; BUSCARCARROSERVLET;
         DAOCARRO;FORM-CARRO-RESULTADO;RESULTADOATUALIZAR--> 
-        <form action="${pageContext.request.contextPath}/buscar-carro?idcarro=" 
+        <form action="${pageContext.request.contextPath}/buscar-nome?ds_carro=" 
                   method="post">
-       <input type="text" name="carro">  
+            
+            <!--  no name estava = carro e a label labelPesquisarCarro-->
+       <input type="text" name="ds_carro">  
        <button type="submit">Pesquisar</button>
         </form>
-        <label id="labelPesquisaCarro" text="Teste"></label>
+        <label name="ds_carro" text="Teste"></label>
         
         
       <ul>

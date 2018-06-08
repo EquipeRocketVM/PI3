@@ -93,6 +93,48 @@ public class DaoCarro {
         return carro;
     }
 
+    //fiz isso aqui para ver se quando eu buscar no pesquisar vai como nome e não id
+    public Carro selectNome(String nomeCarro) throws ClassNotFoundException, SQLException {
+
+        Carro carro = new Carro();
+
+        try (Connection conn = obterConexao();
+                PreparedStatement stmt = conn.prepareStatement(
+                        "select * FROM locadora.Carro WHERE ds_carro = " + nomeCarro);
+                ResultSet resultados = stmt.executeQuery()) {
+
+            while (resultados.next()) {
+
+                //String nomeCarro = resultados.getString("ds_carro");
+                int id = resultados.getInt("id_carro");
+                nomeCarro = resultados.getString("ds_carro");
+                String fabricante = resultados.getString("fabricante");
+                String cor = resultados.getString("cor");
+                int ano = resultados.getInt("ano");
+                double valor = resultados.getDouble("valor");
+                int idclass = resultados.getInt("id_classificacao");
+
+                carro.setIdcarro(id);
+                carro.setCarro(nomeCarro);
+                carro.setFabricante(fabricante);
+                carro.setCor(cor);
+                carro.setAno(ano);
+                carro.setValor(valor);
+                carro.setIdclassificacao(idclass);
+
+            }
+            conn.close();
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return carro;
+    }
+    
+    
+    
     public List<Carro> listar() throws ClassNotFoundException, SQLException {
 
         List<Carro> lista = new ArrayList<Carro>();

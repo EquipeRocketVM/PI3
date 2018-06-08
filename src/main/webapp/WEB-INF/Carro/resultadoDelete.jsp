@@ -7,8 +7,8 @@
     <title>Delete</title>
   </head>
   <body>
-    <h1>Id carro: <c:out value="${carroUpdate.idcarro}" /> deletado com sucesso</h1>
+    <h1>Id carro: <c:out value="${carroUpdate.idcarro}" /> Deletado com sucesso</h1>
     <p>
-    <a href= "${pageContext.request.contextPath}/HomeCarroServlet" > Voltar </a> 
+    <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a> 
   </body>
 </html>

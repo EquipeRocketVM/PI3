@@ -9,6 +9,6 @@
   <body>
     <h1>Carro <c:out value="${carroCadastrada.carro}" /> cadastrado com sucesso</h1>
     <p>
-     <a href= "${pageContext.request.contextPath}/HomeCarroServlet" > Voltar </a> 
+     <a href= "${pageContext.request.contextPath}/HomePage.jsp" > Voltar </a> 
   </body>
 </html>
