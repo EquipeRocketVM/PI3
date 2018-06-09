@@ -89,7 +89,7 @@
 
         <div class="container">
             <div> 
-                <h1 style="align-content: center">Cadastre um Carro:</h1><hr>
+                <h1 style="align-content: center">Cadastre um veículo</h1><hr>
                 <br>
             </div>
             <div style="align-content: center">
