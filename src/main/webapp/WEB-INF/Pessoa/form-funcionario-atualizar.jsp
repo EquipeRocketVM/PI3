@@ -7,7 +7,7 @@
     </head>
     <body>
         <div> 
-            <h1>Cadastre um Funcionario</h1>
+            <h1>Atualizar um Funcionario</h1>
         </div>
         <div>
             <form action="${pageContext.request.contextPath}/AtualizarFuncionario"

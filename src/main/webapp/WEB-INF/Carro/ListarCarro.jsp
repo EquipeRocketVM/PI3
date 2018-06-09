@@ -65,7 +65,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/cadastro-plano">Cadastrar</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarPlanosServlet">Listar Planos</a>
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/AtualizarPlanoServlet">Atualizar</a>
+                           
 
                         </div>
                     </li>
@@ -82,10 +82,13 @@
                     </li>
                 </ul>
             </div>
-        </nav><p>
+        </nav>
+                            <p>
 
         </p>
-        <h1>Carros Disponiveis</h1>
+        <h1>Carros Disponiveis</h1><p>
+            
+        </p>
         <div>
 
             <!-- estou testando aqui para ver o botao de pesquisar por nome precisa fazer um novo select varias coisas
@@ -97,7 +100,7 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="ds_carro" placeholder="Pesquisar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                            <button class="btn btn-outline-secondary" type="submit" onclick="">Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -119,7 +122,8 @@
                             <c:forEach items="${lista}" var="p">
                                 <tr>
                                     <td><c:out value="${p.idcarro}" /></td>
-                                    <th href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-carro?idcarro="${p.idcarro}"'><c:out value="${p.carro}" /></th>
+                                    
+                                    <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-carro?idcarro="${p.idcarro}"'> <c:out value="${p.carro}" /> </a></th>
                                     <td><c:out value="${p.fabricante}" /></td>
                                     <td><c:out value="${p.classificacao}" /></td>
                                 </tr>

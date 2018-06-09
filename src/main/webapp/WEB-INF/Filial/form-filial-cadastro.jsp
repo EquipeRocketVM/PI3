@@ -64,7 +64,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="${pageContext.request.contextPath}/cadastro-plano">Cadastrar</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarPlanosServlet">Listar Planos</a>
+          <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarPlanosServlet">Pesquisar</a>
          
  
         </div>
@@ -83,7 +83,7 @@
     </ul>
   </div>
         </nav> <p>
-            <!-- navbar para barra de ferramentas -->
+            
             
         </p>
 
