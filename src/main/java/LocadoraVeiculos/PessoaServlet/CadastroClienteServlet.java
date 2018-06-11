@@ -106,7 +106,7 @@ public class CadastroClienteServlet extends HttpServlet {
         request.setAttribute("clienteCadastrado", p1);
 
         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("WEB-INF/Pessoa/resultadoCadastro.jsp");
+                = request.getRequestDispatcher("WEB-INF/Pessoa/form-pessoa-cadastroSucess.jsp");
         dispatcher.forward(request, response);
 
     }

@@ -94,7 +94,7 @@
             <div style="align-content: center">
         
         <div> 
-            <h1>Cadastre uma Plano</h1><hr>
+            <h1>Cadastre um Plano</h1><hr>
             <br>
         </div>
         <div>

@@ -1,14 +1,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <title>JSP Page</title>
     </head>
+
     <body>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="${pageContext.request.contextPath}/HomeServlet">ERocket Locadora</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +66,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/cadastro-plano">Cadastrar</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarPlanosServlet">Listar Planos</a>
-                           
+
 
                         </div>
                     </li>
@@ -82,58 +83,32 @@
                     </li>
                 </ul>
             </div>
-        </nav>
-                            <p>
-
+        </nav> <p>
+            <!-- navbar adicionada -->
         </p>
-        <h1>Carros Disponiveis</h1><p>
-            
-        </p>
-        <div>
 
-            <!-- estou testando aqui para ver o botao de pesquisar por nome precisa fazer um novo select varias coisas
-             TUDO NO:FORM-CARRO-CADASTRO; LISTAR CARRO; BUSCARCARROSERVLET;
-            DAOCARRO;FORM-CARRO-RESULTADO;RESULTADOATUALIZAR--> 
-            <form action="${pageContext.request.contextPath}/buscar-carro?idcarro=" 
-                  method="post">
-                <div class="container">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="ds_carro" placeholder="Pesquisar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit" onclick="">Buscar</button>
-                        </div>
+
+
+        <div class="container">
+            <div> 
+                <h1 style="align-content: center">Cadastre um Funcionário: </h1><hr>
+                <br>
+            </div>
+            <div style="align-content: center">
+                <div style="align-content: center">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Feito!</h4>
+                        <p>A operação foi realizada com sucesso.</p>
+                        <hr>
+                        <p class="mb-0"> <a href="${pageContext.request.contextPath}/HomePage.jsp" class="alert-link">Clique aqui</a> se quiser voltar a tela inicial :)</p>
                     </div>
+
                 </div>
-            </form>
+            </div> 
 
 
-            <ul>
-                <div class="container">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Fabricante</th>
-                                <th scope="col">Plano</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach items="${lista}" var="p">
-                                <tr>
-                                    <td><c:out value="${p.idcarro}" /></td>
-                                    
-                                    <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-carro?idcarro="${p.idcarro}"'> <c:out value="${p.carro}" /> </a></th>
-                                    <td><c:out value="${p.fabricante}" /></td>
-                                    <td><c:out value="${p.classificacao}" /></td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>    
-                    </table>
-                </div>
-            </ul> <p> 
-        </div>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     </body>
 </html>

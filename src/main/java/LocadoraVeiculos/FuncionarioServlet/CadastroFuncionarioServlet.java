@@ -123,9 +123,9 @@ public class CadastroFuncionarioServlet extends HttpServlet {
 
         request.setAttribute("funcCadastrado", p1);
 
-//        RequestDispatcher dispatcher
-//                = request.getRequestDispatcher("WEB-INF/Pessoa/resultadoCadastroFunc.jsp");
-//        dispatcher.forward(request, response);
+      RequestDispatcher dispatcher
+                = request.getRequestDispatcher("WEB-INF/Pessoa/form-funcionario-cadastroSucess.jsp");
+        dispatcher.forward(request, response);
 
     }
 

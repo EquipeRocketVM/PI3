@@ -80,7 +80,7 @@ public class CadastroFilialServlet extends HttpServlet {
         request.setAttribute("pessoaCadastrada", p1);
 
         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("WEB-INF/Filial/resultadoCadastro.jsp");
+                = request.getRequestDispatcher("WEB-INF/Filial/form-filial-cadastroSucess.jsp");
         dispatcher.forward(request, response);
 
     }

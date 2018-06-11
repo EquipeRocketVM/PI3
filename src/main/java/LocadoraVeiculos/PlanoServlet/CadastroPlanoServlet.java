@@ -53,7 +53,7 @@ public class CadastroPlanoServlet extends HttpServlet {
         request.setAttribute("planoCadastrado", p1);
 
         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("WEB-INF/Plano/resultadoCadastro.jsp");
+                = request.getRequestDispatcher("WEB-INF/Plano/resultadoCadastroSucess.jsp");
         dispatcher.forward(request, response);
 
     }

@@ -62,7 +62,7 @@ public class CadastroCarroServlet extends HttpServlet {
         request.setAttribute("carroCadastrado", p1);
 
         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("WEB-INF/Carro/resultadoCadastro.jsp");
+                = request.getRequestDispatcher("WEB-INF/Carro/form-carro-cadastroSucess.jsp");
         dispatcher.forward(request, response);
 
     }
