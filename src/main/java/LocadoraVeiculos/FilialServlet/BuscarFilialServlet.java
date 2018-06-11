@@ -45,7 +45,7 @@ public class BuscarFilialServlet extends HttpServlet {
 
         String idfilial = request.getParameter("idfilial");
 
-        int id = Integer.parseInt(idfilial.substring(1, 2));
+        int id = Integer.parseInt(idfilial);
 
         System.out.println(id);
 
@@ -79,7 +79,7 @@ public class BuscarFilialServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String idfilial = request.getParameter("id");
+        String idfilial = request.getParameter("idfilial");
 
         ControllerFilial con = new ControllerFilial();
 
@@ -94,7 +94,7 @@ public class BuscarFilialServlet extends HttpServlet {
 
         request.setAttribute("pessoaAtualizada", filial);
 
-        request.getRequestDispatcher("WEB-INF/WEB-INF/Filial/form-filial-resultado.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/Filial/form-filial-resultado.jsp").forward(request, response);
 
     }
 

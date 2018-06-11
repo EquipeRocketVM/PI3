@@ -123,8 +123,7 @@
                                 <tr>
                                     <td><c:out value="${p.idplano}" /></td>
 
-                                    <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-plano?id_plano=
-                                            "${p.idplano}"'> <c:out value="${p.plano}" /> </a></th>
+                                    <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-plano?id_plano=${p.idplano}'> <c:out value="${p.plano}" /> </a></th>
                                     <td><c:out value="${p.classificacao}" /></td>
                                     <td><c:out value="${p.valor}" /></td>
 

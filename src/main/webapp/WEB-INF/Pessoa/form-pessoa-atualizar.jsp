@@ -7,7 +7,7 @@
     </head>
     <body>
         <div> 
-            <h1>Cadastre um Carro</h1>
+            <h1>Editar Cliente</h1>
         </div>
         <div>
             <form action="${pageContext.request.contextPath}/AtualizarPessoa"

@@ -118,8 +118,7 @@
                             <c:forEach items="${lista}" var="p">
                                 <tr>
                                     <td><c:out value="${p.id}" /></td>
-                                    <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-filial?idfilial="${p.id}"'>
-                                            <c:out value="${p.nomeUnidade}" /> </a></th>
+                                    <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-filial?idfilial=${p.id}'><c:out value="${p.nomeUnidade}" /> </a></th>
                                     <td><c:out value="${p.telefone}" /></td>
                                     <td><c:out value="${p.gerente}" /></td>
                                 </tr>

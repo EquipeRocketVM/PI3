@@ -38,7 +38,7 @@ public class BuscarPlanoServlet extends HttpServlet {
             throws ServletException, IOException {
         
         String idplano = request.getParameter("id_plano");
-        int id = Integer.parseInt(idplano.substring(1,2));
+        int id = Integer.parseInt(idplano);
         DaoPlano con = new DaoPlano();
         Plano plano = new Plano();
         
@@ -65,7 +65,7 @@ public class BuscarPlanoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String idplano = request.getParameter("idplano");
+        String idplano = request.getParameter("id_plano");
 
         DaoPlano con = new DaoPlano();
 
@@ -78,9 +78,9 @@ public class BuscarPlanoServlet extends HttpServlet {
         } catch (Exception e) {
         }
 
-        request.setAttribute("pessoaAtualizada", plano);
+        request.setAttribute("planoAtualizada", plano);
 
-        request.getRequestDispatcher("WEB-INF/Plano/form-filial-resultado.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/Plano/form-plano-resultado.jsp").forward(request, response);
 
     }
 

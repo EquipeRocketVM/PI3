@@ -43,9 +43,9 @@ public class BuscarClienteServlet extends HttpServlet {
             response.sendRedirect("index.jsp");
         }
 
-        String idcarro = request.getParameter("idcliente");
+        String idcliente = request.getParameter("idcliente");
 
-        int id = Integer.parseInt(idcarro.substring(1, 2));
+        int id = Integer.parseInt(idcliente.substring(1,2));
 
         DaoPessoa con = new DaoPessoa();
 
@@ -55,8 +55,8 @@ public class BuscarClienteServlet extends HttpServlet {
 
             pessoa = con.selectCliente(id);
 
-            System.out.println(pessoa.getNome());
-            System.out.println(pessoa.getSobrenome());
+//            System.out.println(pessoa.getNome());
+//            System.out.println(pessoa.getSobrenome());
 
         } catch (Exception e) {
 
@@ -80,22 +80,22 @@ public class BuscarClienteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String idcarro = request.getParameter("idcarro");
+        String idcliente = request.getParameter("idcliente");
 
-        DaoCarro con = new DaoCarro();
+        DaoPessoa con = new DaoPessoa();
 
-        Carro carro = new Carro();
+        Pessoa pessoa = new Pessoa();
 
         try {
 
-            carro = con.select(Integer.parseInt(idcarro));
+           pessoa = con.selectCliente(Integer.parseInt(idcliente));
 
         } catch (Exception e) {
         }
 
-        request.setAttribute("pessoaAtualizada", carro);
+        request.setAttribute("ClienteAtualizada", pessoa);
 
-        request.getRequestDispatcher("WEB-INF/Carro/form-carro-resultado.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/Pessoa/form-pessoa-atualizar.jsp").forward(request, response);
 
     }
 

@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet(name = "BuscarFuncionarioServlet", urlPatterns = {"/buscar-funcionario"})
 public class BuscarFuncionarioServlet extends HttpServlet {
 
@@ -39,8 +38,10 @@ public class BuscarFuncionarioServlet extends HttpServlet {
             response.sendRedirect("index.jsp");
         }
 
-        String idcarro = request.getParameter("idfuncionario");
-        int id = Integer.parseInt(idcarro.substring(1, 2));
+        String idfuncionario = request.getParameter("idfuncionario");
+        
+        
+        int id = Integer.parseInt(idfuncionario);
 
         DaoPessoa con = new DaoPessoa();
 
@@ -55,9 +56,9 @@ public class BuscarFuncionarioServlet extends HttpServlet {
         }
 
         request.setAttribute("FuncionarioAtualizada", pessoa);
-
+        
         request.getRequestDispatcher("WEB-INF/Pessoa/form-funcionario-atualizar.jsp").forward(request, response);
-
+        
     }
 
     /**
@@ -71,6 +72,26 @@ public class BuscarFuncionarioServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        // isso aqui foi adicionado nao tinha nada no post
+        String idfuncionario = request.getParameter("idfuncionario");
+                  
+        
+       int id = Integer.parseInt(idfuncionario);
+        DaoPessoa con = new DaoPessoa();
+
+        Pessoa pessoa = new Pessoa();
+
+        try {
+
+            pessoa = con.selectFuncionario(id);
+
+        } catch (Exception e) {
+        }
+
+        request.setAttribute("FuncionarioAtualizada", pessoa);
+        
+        request.getRequestDispatcher("WEB-INF/Plano/form-funcionario-atualizar.jsp").forward(request, response);
 
     }
 

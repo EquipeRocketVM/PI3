@@ -121,8 +121,7 @@
                                 <tr>
                                     <td><c:out value="${p.id}" /></td>
 
-                                    <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-cliente?idcliente=
-                                            "${p.id}"'> <c:out value="${p.nome}" /> </a></th>
+                                    <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-cliente?idcliente="${p.id}'> <c:out value="${p.nome}" /> </a></th>
                                     <td><c:out value="${p.sobrenome}" /></td>
                                     <td><c:out value="${p.cpf}" /></td>
                                     <td><c:out value="${p.cnh}" /></td>
