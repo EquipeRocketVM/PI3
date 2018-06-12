@@ -65,7 +65,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/cadastro-plano">Cadastrar</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarPlanosServlet">Listar Planos</a>
-                           
+
 
                         </div>
                     </li>
@@ -83,11 +83,11 @@
                 </ul>
             </div>
         </nav>
-                            <p>
+        <p>
 
         </p>
         <h1>Carros Disponiveis</h1><p>
-            
+
         </p>
         <div>
 
@@ -116,16 +116,24 @@
                                 <th scope="col">Nome</th>
                                 <th scope="col">Fabricante</th>
                                 <th scope="col">Plano</th>
+                              
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach items="${lista}" var="p">
                                 <tr>
                                     <td><c:out value="${p.idcarro}" /></td>
-                                    
+
                                     <th> <a href='http://localhost:8080/agendaweb-1.0-SNAPSHOT/buscar-carro?idcarro="${p.idcarro}"'> <c:out value="${p.carro}" /> </a></th>
                                     <td><c:out value="${p.fabricante}" /></td>
-                                    <td><c:out value="${p.classificacao}" /></td>
+                                    <td><c:out value="${p.idplano}" /></td>
+                                    <td>
+                                         <form action="${pageContext.request.contextPath}/buscar-carro?idcarro=" 
+                                               method="post">
+                                        <button type="submit" value="${p.idcarro}" class="btn btn-success btnEdit">Editar</button>
+                                        <button type="button" value="${p.idcarro}" class="btn btn-danger btnDelete">Deletar</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>    
@@ -135,5 +143,65 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+         <script>
+        $(".btnDelete").click(function(){
+            var id = $(this).value("id");
+            var row = $(this).parent().parent();
+            
+            bootbox.confirm({
+                title: "Remover produto",
+                message: "Você quer mesmo remover este produto?",
+                buttons: {
+                    confirm: {
+                        label: 'Confirmar',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'Cancelar',
+                        className: 'btn-default'
+                    }
+                },
+                callback: function(result){
+                    if (result != 1)
+                        return;
+                    $.ajax({
+                        url: "RemoveProduct?id=" + id,
+                        method: "GET",
+                        success: function(result) {
+                            $("#alert").removeClass("alert-danger").addClass("alert-success");
+                            $("#alert").text("Removido com sucesso!").show();
+                            row.remove();
+                            
+                        },
+                        error: function(){
+                            $("#alert").removeClass("alert-success").addClass("alert-danger");
+                            $("#alert").text("Ocorreu um erro ao remover o produto!").show();
+                        }
+                    });
+                }
+            });
+            
+        });
+        
+    $(".btnEdit").click(function(){
+            var id = $(this).data("id");
+            $.ajax({
+                url: "EditProduct?id=" + id,
+                method: "GET",
+                success: function(result){
+                    console.log(result);
+                    var body = $("#editProductModal .modal-body");
+                    body.find("input[name='idcarro']").val(result.idcarro);
+                    body.find("input[name='carro']").val(result.name);
+                    body.find("input[name='fabricante']").val(result.fabricante);
+                    body.find("input[name='idplano']").val(result.idplano);                    
+                    
+                    $("#editProductModal").modal('show');
+                },
+                error: function() {
+                }
+            });
+        });
+    
     </body>
 </html>

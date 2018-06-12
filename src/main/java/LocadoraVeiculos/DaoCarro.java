@@ -142,7 +142,7 @@ public class DaoCarro {
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
                         "SELECT id_carro, ds_carro, fabricante, cor, ano, valor, id_plano "
-                        + " FROM locadora.Carro"
+                        + " FROM locadora.Carro a"
                         + " where id_status = 1");
                 ResultSet resultados = stmt.executeQuery()) {
 

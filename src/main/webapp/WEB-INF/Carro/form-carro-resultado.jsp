@@ -28,7 +28,7 @@
                 <div>
                     Ano: <input type="text" name="ano" value= "${carroAtualizada.ano}"/>
                 </div>  
-                <div>
+                <div> 
                     Valor Carro: <input type="text" name="valor" value= "${carroAtualizada.valor}"/>
                 </div>
                 <div>
