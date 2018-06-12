@@ -5,14 +5,21 @@
  */
 package LocadoraVeiculos.HomeServlet;
 
+import LocadoraVeiculos.CarroServlet.CadastroCarroServlet;
+import LocadoraVeiculos.DaoPlano;
+import LocadoraVeiculos.Plano;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 
 @WebServlet(name = "HomeServlet", urlPatterns = {"/HomeServlet"})
 public class HomeServlet extends HttpServlet {
@@ -34,7 +41,7 @@ public class HomeServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HomeServlet</title>");            
+            out.println("<title>Servlet HomeServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HomeServlet at " + request.getContextPath() + "</h1>");
@@ -55,7 +62,7 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("./HomePage.jsp").forward(request, response);  
+        request.getRequestDispatcher("./HomePage.jsp").forward(request, response);
     }
 
     /**
@@ -69,7 +76,20 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        List<Plano> listaPlano2 = new ArrayList<Plano>();
+
+        try {
+            listaPlano2 = DaoPlano.listar();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CadastroCarroServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroCarroServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        request.setAttribute("listaPlano2", listaPlano2);
+
+        request.getRequestDispatcher("WEB-INF/Carro/form-carro-cadastro.jsp").forward(request, response);
+
     }
 
     /**

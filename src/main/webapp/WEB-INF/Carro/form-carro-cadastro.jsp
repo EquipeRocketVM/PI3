@@ -65,7 +65,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/cadastro-plano">Cadastrar</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarPlanosServlet">Listar Planos</a>
-                           
+
 
                         </div>
                     </li>
@@ -93,6 +93,7 @@
                 <br>
             </div>
             <div style="align-content: center">
+                
                 <form action="${pageContext.request.contextPath}/cadastro-carro"
                       method="post">
 
@@ -127,29 +128,31 @@
 
                         </div>
 
-                        <div class="form-group col-md-4">
-                            <label for="classificacao">Classificação</label>
-                            <select name="class" class="form-control">
 
-                                <option selected>Escolha...</option>
-                                <option value="1">Hatch</option>
-                                <option value="2">Sedan</option>
-                                <option value="3">SUV</option>
-                                <option value="4">Picapes</option>
-                                <option value="5">Esportivos</option>
-                                <option value="6">Vans</option>
-                            </select>
-
-                        </div>
+                            <div class="form-group col-md-6">
+                                <label for="classificacao">Plano</label>
+                                <select name="class" class="form-control">                                                                  
+                                    <c:forEach items="${listaPlano2}" var="p">                                    
+                                        <option value="${p.idplano}"> ${p.plano}</option>                    
+                                    </c:forEach>
+                                </select>
+                            </div>
+                                    <div>
+                                        <c:forEach items="${listaPlano2}" var="p">
+                                        A: ${p.idplano}
+                                        </c:forEach>
+                                    </div>
+                                    
+                                   
                     </div>
 
                     <button type="submit" class="btn btn-dark">Salvar</button>&nbsp;
-                    
+
                     <!-- botao novissimo lindissimo pegando -->
                     <button type="submit" class="btn btn-dark"
                             formaction="${pageContext.request.contextPath}/HomePage.jsp">Voltar</button>
-                            
-                   <!--  esse era o botao que estava <a href= "$ {pageCon text.request.contextPath}/HomePage.jsp" > Voltar </a>  -->
+
+                    <!--  esse era o botao que estava <a href= "$ {pageCon text.request.contextPath}/HomePage.jsp" > Voltar </a>  -->
                 </form>
 
             </div>

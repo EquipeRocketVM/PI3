@@ -68,7 +68,7 @@ public class CarregaOp extends HttpServlet {
         ControllerFilial daoFilial = new ControllerFilial();
 
         DaoCarro daoCarro = new DaoCarro();
-        DaoPlano daoPlano = new DaoPlano();
+        DaoPlano DaoPlano = new DaoPlano();
 
         List<Carro> listaCarro2 = new ArrayList<Carro>();
         List<Plano> listaPlano2 = new ArrayList<Plano>();
@@ -76,21 +76,17 @@ public class CarregaOp extends HttpServlet {
 
         try {
             List<Carro> listaCarro = daoCarro.listar();
-            List<Plano> listaPlano = daoPlano.listar();
+            List<Plano> listaPlano = DaoPlano.listar();
             listaFilial = daoFilial.listar();
             
             for (Carro car : listaCarro) {
-                int idclasOut = car.getIdclassificacao();
-                if (idclasOut == id) {
                     listaCarro2.add(car);
                 }
-            }
+            
 
             for (Plano plan : listaPlano) {
-                int idclasOut = plan.getIdclassificacao();
-                if (idclasOut == id) {
                     listaPlano2.add(plan);
-                }
+
             }
             
         } catch (ClassNotFoundException ex) {

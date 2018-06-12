@@ -14,21 +14,16 @@ public class Plano {
     private int idplano;
     
     private String plano;
-    
-    private int idclassificacao;
-    
-    private String classificacao;
-    
+
     private double valor;
       
     public Plano() {
       
     }
     
-    public Plano(String ds_plano, int id_classificao, double valor) {
+    public Plano(String ds_plano, double valor) {
 
       this.plano = ds_plano;
-      this.idclassificacao = id_classificao;
       this.valor = valor;
     
     }
@@ -59,34 +54,6 @@ public class Plano {
      */
     public void setPlano(String plano) {
         this.plano = plano;
-    }
-
-    /**
-     * @return the idclassificacao
-     */
-    public int getIdclassificacao() {
-        return idclassificacao;
-    }
-
-    /**
-     * @param idclassificacao the idclassificacao to set
-     */
-    public void setIdclassificacao(int idclassificacao) {
-        this.idclassificacao = idclassificacao;
-    }
-
-    /**
-     * @return the classificacao
-     */
-    public String getClassificacao() {
-        return classificacao;
-    }
-
-    /**
-     * @param classificacao the classificacao to set
-     */
-    public void setClassificacao(String classificacao) {
-        this.classificacao = classificacao;
     }
 
     /**

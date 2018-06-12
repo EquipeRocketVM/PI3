@@ -26,29 +26,29 @@ public class Carro {
     
     private double valor;
     
-    private String classificacao;
+    private int idplano;
     
-    private int idclassificacao;
   
         public Carro() {
       
     }
     
-    public Carro(String carro, String fabricante, String cor, int ano, double valor, int idclassificacao) {
+    public Carro(String carro, String fabricante, String cor, int ano, double valor) {
       
       this.carro = carro;
       this.fabricante = fabricante;
       this.cor = cor;
       this.ano = ano;
       this.valor = valor;
-      this.classificacao = classificacao;
-      this.idclassificacao = idclassificacao;
+
       
     }
 
-    public Carro(String carro, String fabricante, String cor, String ano, double parseDouble, int parseInt) {
+    public Carro(String carro, String fabricante, String cor, int parseInt, double parseDouble, int parseInt0) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
 
     /**
      * @return the idcarro
@@ -134,33 +134,15 @@ public class Carro {
         this.valor = valor;
     }
 
-    /**
-     * @return the classificacao
-     */
-    public String getClassificacao() {
-        return classificacao;
+    public int getIdplano() {
+        return idplano;
     }
 
-    /**
-     * @param classificacao the classificacao to set
-     */
-    public void setClassificacao(String classificacao) {
-        this.classificacao = classificacao;
+    public void setIdplano(int idplano) {
+        this.idplano = idplano;
     }
 
-    /**
-     * @return the idclassificacao
-     */
-    public int getIdclassificacao() {
-        return idclassificacao;
-    }
-
-    /**
-     * @param idclassificacao the idclassificacao to set
-     */
-    public void setIdclassificacao(int idclassificacao) {
-        this.idclassificacao = idclassificacao;
-    }
+   
          
     
     

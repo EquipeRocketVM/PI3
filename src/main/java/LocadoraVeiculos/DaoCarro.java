@@ -32,13 +32,13 @@ public class DaoCarro {
             try (PreparedStatement stmt
                     = conn.prepareStatement(
                             "INSERT INTO locadora.Carro (ds_carro, fabricante, cor, ano,"
-                            + " valor, id_classificacao, id_status) VALUES (?,?,?,?,?,?,?)")) {
+                            + " valor, id_plano, id_status) VALUES (?,?,?,?,?,?,?)")) {
                 stmt.setString(1, p.getCarro());
                 stmt.setString(2, p.getFabricante());
                 stmt.setString(3, p.getCor());
                 stmt.setInt(4, p.getAno());
                 stmt.setDouble(5, p.getValor());
-                stmt.setInt(6, p.getIdclassificacao());
+                stmt.setInt(6, p.getIdplano());
                 stmt.setInt(7, 1);
 
                 int status = stmt.executeUpdate();
@@ -72,7 +72,7 @@ public class DaoCarro {
                 String cor = resultados.getString("cor");
                 int ano = resultados.getInt("ano");
                 double valor = resultados.getDouble("valor");
-                int idclass = resultados.getInt("id_classificacao");
+                int idclass = resultados.getInt("id_plano");
 
                 carro.setIdcarro(id);
                 carro.setCarro(nomeCarro);
@@ -80,7 +80,7 @@ public class DaoCarro {
                 carro.setCor(cor);
                 carro.setAno(ano);
                 carro.setValor(valor);
-                carro.setIdclassificacao(idclass);
+                carro.setIdplano(idclass);
 
             }
             conn.close();
@@ -112,7 +112,7 @@ public class DaoCarro {
                 String cor = resultados.getString("cor");
                 int ano = resultados.getInt("ano");
                 double valor = resultados.getDouble("valor");
-                int idclass = resultados.getInt("id_classificacao");
+                int idclass = resultados.getInt("id_plano");
 
                 carro.setIdcarro(id);
                 carro.setCarro(nomeCarro);
@@ -120,7 +120,7 @@ public class DaoCarro {
                 carro.setCor(cor);
                 carro.setAno(ano);
                 carro.setValor(valor);
-                carro.setIdclassificacao(idclass);
+                carro.setIdplano(idclass);
 
             }
             conn.close();
@@ -141,10 +141,8 @@ public class DaoCarro {
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "SELECT id_carro, ds_carro, fabricante, cor, ano, valor, ds_classificacao, "
-                        + "b.id_classificacao "
-                        + " FROM locadora.Carro a inner join locadora.Classificacao b on "
-                        + "a.id_classificacao = b.id_classificacao "
+                        "SELECT id_carro, ds_carro, fabricante, cor, ano, valor, id_plano "
+                        + " FROM locadora.Carro"
                         + " where id_status = 1");
                 ResultSet resultados = stmt.executeQuery()) {
 
@@ -155,8 +153,7 @@ public class DaoCarro {
                 String cor = resultados.getString("cor");
                 int ano = resultados.getInt("ano");
                 double valor = resultados.getDouble("valor");
-                String classificacao = resultados.getString("ds_classificacao");
-                int idclassificacao = resultados.getInt("id_classificacao");
+                int idplano = resultados.getInt("id_plano");
 
                 Carro p = new Carro();
 
@@ -166,8 +163,7 @@ public class DaoCarro {
                 p.setCor(cor);
                 p.setAno(ano);
                 p.setValor(valor);
-                p.setClassificacao(classificacao);
-                p.setIdclassificacao(idclassificacao);
+                p.setIdplano(idplano);
 
                 lista.add(p);
 
@@ -182,7 +178,7 @@ public class DaoCarro {
             System.out.println("METODO UPDATE");
             System.out.println(P.getCarro() + " esse é o Carro");
             System.out.println(P.getAno() + " esse é o ano do carro");
-            System.out.println(P.getClassificacao() + " esse é a classificação do carro");
+
             System.out.println(P.getValor()+ " esse é o valor do carro");
             System.out.println(P.getCor() + " esse é a cor do carro");
             System.out.println(P.getFabricante() + " esse é o fabricante carro");
@@ -190,14 +186,14 @@ public class DaoCarro {
 
             Connection conn = obterConexao();
             PreparedStatement stmt = conn.prepareStatement(" UPDATE Carro SET "
-                    + " ds_carro = ?, fabricante =?, cor=?,  ano=?, valor=?, id_classificacao=? "
+                    + " ds_carro = ?, fabricante =?, cor=?,  ano=?, valor=?, id_plano=? "
                     + " WHERE id_carro = ? ");
             stmt.setString(1, P.getCarro());
             stmt.setString(2, P.getFabricante());
             stmt.setString(3, P.getCor());
             stmt.setInt(4, P.getAno());
             stmt.setDouble(5, P.getValor());
-            stmt.setInt(6, P.getIdclassificacao());
+            stmt.setInt(6, P.getIdplano());
             stmt.setInt(7, P.getIdcarro());
             stmt.executeUpdate();
 

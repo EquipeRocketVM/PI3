@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 
 public class DaoPlano {
 
-    private Connection obterConexao() throws ClassNotFoundException, SQLException {
+    private static Connection obterConexao() throws ClassNotFoundException, SQLException {
         // 1A) Declarar o driver JDBC de acordo com o Banco de dados usado
         Class.forName("com.mysql.jdbc.Driver");
 
@@ -34,33 +34,28 @@ public class DaoPlano {
         return conn;
     }
 
-    public List<Plano> listar() throws ClassNotFoundException, SQLException {
+    public static List<Plano> listar() throws ClassNotFoundException, SQLException {
 
         List<Plano> lista = new ArrayList<Plano>();
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "SELECT a.id_plano, a.ds_plano, b.id_classificacao, b.ds_classificacao, a.valor "
+                        "SELECT a.id_plano, a.ds_plano, a.valor "
                         + " FROM locadora.Plano a "
-                        + " inner join locadora.Classificacao b on a.id_class_carro = b.id_classificacao "
                         + " where a.id_status = 1 ");
                 ResultSet resultados = stmt.executeQuery()) {
 
-            System.out.println("retornou consulta");
+            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa retornou consulta");
 
             while (resultados.next()) {
                 int id_plano = resultados.getInt("id_plano");
                 String ds_plano = resultados.getString("ds_plano");
-                int id_classificao = resultados.getInt("id_classificacao");
-                String ds_classificao = resultados.getString("ds_classificacao");
                 double valor = resultados.getDouble("valor");
 
                 Plano p = new Plano();
 
                 p.setIdplano(id_plano);
-                p.setIdclassificacao(id_classificao);
                 p.setPlano(ds_plano);
-                p.setClassificacao(ds_classificao);
                 p.setValor(valor);
 
                 lista.add(p);
@@ -76,16 +71,14 @@ public class DaoPlano {
         try (Connection conn = obterConexao()) {
             conn.setAutoCommit(false);
 
-            System.out.println(p.getIdclassificacao() + " classificao é: ");
 
             try (PreparedStatement stmt
                     = conn.prepareStatement(
-                            " INSERT INTO locadora.Plano (ds_plano, id_class_carro, "
+                            " INSERT INTO locadora.Plano (ds_plano, "
                             + "valor, id_status) VALUES (?,?,?,?) ")) {
                 stmt.setString(1, p.getPlano());
-                stmt.setInt(2, p.getIdclassificacao());
-                stmt.setDouble(3, p.getValor());
-                stmt.setInt(4, 1);
+                stmt.setDouble(2, p.getValor());
+                stmt.setInt(3, 1);
 
                 int status = stmt.executeUpdate();
 
@@ -106,12 +99,11 @@ public class DaoPlano {
 
             Connection conn = obterConexao();
             PreparedStatement stmt = conn.prepareStatement(" UPDATE Plano SET "
-                    + " ds_plano = ?, id_class_carro =?, valor=? "
+                    + " ds_plano = ?, valor=? "
                     + " WHERE id_plano = ? ");
             stmt.setString(1, P.getPlano());
-            stmt.setInt(2, P.getIdclassificacao());
-            stmt.setDouble(3, P.getValor());
-            stmt.setInt(4, P.getIdplano());
+            stmt.setDouble(2, P.getValor());
+            stmt.setInt(3, P.getIdplano());
             stmt.executeUpdate();
 
             conn.close();
@@ -148,9 +140,7 @@ public class DaoPlano {
 
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
-                        "SELECT a.id_plano, a.ds_plano, b.id_classificacao, b.ds_classificacao, a.valor "
-                        + " FROM locadora.Plano a inner join locadora.Classificacao b "
-                        + " on a.id_class_carro = b.id_classificacao "
+                        "SELECT a.id_plano, a.ds_plano,  a.valor "
                         + " WHERE a.id_status = 1 and a.id_plano = " + id);
                 ResultSet resultados = stmt.executeQuery()) {
 
@@ -158,16 +148,12 @@ public class DaoPlano {
 
                 int idplano = resultados.getInt("id_plano");
                 String ds_plano = resultados.getString("ds_plano");
-                int idclassificao = resultados.getInt("id_classificacao");
-                String ds_classificao = resultados.getString("ds_classificacao");
                 double valor = resultados.getInt("valor");
 
                 System.out.println("O nome do plano é: " + ds_plano);
 
                 plano.setIdplano(idplano);
                 plano.setPlano(ds_plano);
-                plano.setIdclassificacao(idclassificao);
-                plano.setClassificacao(ds_classificao);
                 plano.setValor(valor);
 
             }

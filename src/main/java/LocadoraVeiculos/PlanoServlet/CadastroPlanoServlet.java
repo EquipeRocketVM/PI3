@@ -37,10 +37,9 @@ public class CadastroPlanoServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String plano = request.getParameter("plano");
-        String id_classificao = request.getParameter("class");
         String valor = request.getParameter("valor");
 
-        Plano p1 = new Plano(plano, Integer.parseInt(id_classificao), Double.parseDouble(valor));
+        Plano p1 = new Plano(plano, Double.parseDouble(valor));
         DaoPlano con = new DaoPlano();
 
         try {

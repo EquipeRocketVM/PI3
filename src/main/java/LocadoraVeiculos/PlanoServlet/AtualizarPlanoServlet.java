@@ -86,13 +86,11 @@ public class AtualizarPlanoServlet extends HttpServlet {
         
         String id_plano = request.getParameter("id_plano");
         String ds_plano  = request.getParameter("nome");
-        String id_classificao = request.getParameter("class");
         String valor = request.getParameter("numero");
         String metodo = request.getParameter("metodo");
         
-        System.out.println(id_classificao + " esse é o valor");
 
-        Plano p1 = new Plano( ds_plano, Integer.parseInt(id_classificao), Double.parseDouble(valor));
+        Plano p1 = new Plano( ds_plano, Double.parseDouble(valor));
         DaoPlano con = new DaoPlano();
         
         p1.setIdplano(Integer.parseInt(id_plano));

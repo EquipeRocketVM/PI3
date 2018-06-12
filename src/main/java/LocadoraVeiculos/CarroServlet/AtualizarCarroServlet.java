@@ -74,10 +74,10 @@ public class AtualizarCarroServlet extends HttpServlet {
         String cor = request.getParameter("cor");
         String ano = request.getParameter("ano");
         String valor = request.getParameter("valor");
-        String idclassificacao = request.getParameter("class");
+        String idplano = request.getParameter("class");
         String metodo = request.getParameter("metodo");
 
-        Carro p1 = new Carro(carro, fabricante, cor, Integer.parseInt(ano), Double.parseDouble(valor), Integer.parseInt(idclassificacao));
+        Carro p1 = new Carro(carro, fabricante, cor, Integer.parseInt(ano), Double.parseDouble(valor), Integer.parseInt(idplano));
         p1.setIdcarro(Integer.parseInt(idcarro));
 
         DaoCarro con = new DaoCarro();
